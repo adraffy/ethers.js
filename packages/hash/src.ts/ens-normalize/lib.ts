@@ -33,11 +33,11 @@ import {explode_cp, str_from_cps, quote_cp, compare_arrays, array_replace} from 
 import {nfc, nfd} from './nf';
 import {IntSet, set_add_many} from './set';
 
-export type OutputToken = {
+type OutputToken = {
 	emoji: boolean;
 	cps: number[];	
 };
-export type Label = {
+type Label = {
 	input: number[]; 
 	offset: number;
 	error?: Error;

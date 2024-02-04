@@ -243,7 +243,6 @@ function read_replacement_table(w: number, next: NextFunc, into: Mapping[]) {
 	});
 }
 
-
 export function read_trie(next: NextFunc) {
 	type Node = {S: number, B: Node[], Q: number[]};
 	let ret: number[][] = [];
