@@ -1,5 +1,5 @@
 import { concat, hexlify } from "@ethersproject/bytes";
-import { toUtf8Bytes, toUtf8String } from "@ethersproject/strings";
+import { toUtf8Bytes } from "@ethersproject/strings";
 import { keccak256 } from "@ethersproject/keccak256";
 import { Logger } from "@ethersproject/logger";
 import { version } from "./_version";
@@ -7,42 +7,23 @@ const logger = new Logger(version);
 import { ens_normalize } from "./ens-normalize/lib";
 const Zeros = new Uint8Array(32);
 Zeros.fill(0);
-function checkComponent(comp) {
-    if (comp.length === 0) {
-        throw new Error("invalid ENS name; empty component");
-    }
-    return comp;
-}
 function ensNameSplit(name) {
-    const bytes = toUtf8Bytes(ens_normalize(name));
-    const comps = [];
-    if (name.length === 0) {
-        return comps;
-    }
-    let last = 0;
-    for (let i = 0; i < bytes.length; i++) {
-        const d = bytes[i];
-        // A separator (i.e. "."); copy this component
-        if (d === 0x2e) {
-            comps.push(checkComponent(bytes.slice(last, i)));
-            last = i + 1;
-        }
-    }
-    // There was a stray separator at the end of the name
-    if (last >= bytes.length) {
-        throw new Error("invalid ENS name; empty component");
-    }
-    comps.push(checkComponent(bytes.slice(last)));
-    return comps;
+    // the empty string is 0-labels
+    // every label must be non-empty
+    if (!name)
+        return []; // note: "".split('.') === [""]
+    return ens_normalize(name).split('.').map(x => toUtf8Bytes(x));
 }
 export function ensNormalize(name) {
-    return ensNameSplit(name).map((comp) => toUtf8String(comp)).join(".");
+    return ens_normalize(name);
 }
 export function isValidName(name) {
+    // there must be 1+ labels
+    // every labels must be non-empty
     try {
-        return (ensNameSplit(name).length !== 0);
+        return !!ens_normalize(name);
     }
-    catch (error) { }
+    catch (_a) { }
     return false;
 }
 export function namehash(name) {
@@ -57,15 +38,16 @@ export function namehash(name) {
     }
     return hexlify(result);
 }
-export function dnsEncode(name) {
+export function dnsEncode(name, max) {
+    if ((max & 255) !== max)
+        max = 63; // max must be exactly 1 byte else 63 (old default)
     return hexlify(concat(ensNameSplit(name).map((comp) => {
-        // DNS does not allow components over 63 bytes in length
-        if (comp.length > 63) {
-            throw new Error("invalid DNS encoded entry; length exceeds 63 bytes");
+        if (comp.length > max) {
+            throw new Error(`invalid DNS encoded entry; length exceeds ${max} bytes`);
         }
         const bytes = new Uint8Array(comp.length + 1);
+        bytes[0] = comp.length;
         bytes.set(comp, 1);
-        bytes[0] = bytes.length - 1;
         return bytes;
     }))) + "00";
 }

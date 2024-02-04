@@ -26,34 +26,7 @@
  *
  * See: https://github.com/adraffy/ens-normalize.js
  */
-// https://github.com/behnammodi/polyfill/blob/master/array.polyfill.js
-function flat(array, depth) {
-    if (depth == null) {
-        depth = 1;
-    }
-    const result = [];
-    const forEach = result.forEach;
-    const flatDeep = function (arr, depth) {
-        forEach.call(arr, function (val) {
-            if (depth > 0 && Array.isArray(val)) {
-                flatDeep(val, depth - 1);
-            }
-            else {
-                result.push(val);
-            }
-        });
-    };
-    flatDeep(array, depth);
-    return result;
-}
-function fromEntries(array) {
-    const result = {};
-    for (let i = 0; i < array.length; i++) {
-        const value = array[i];
-        result[value[0]] = value[1];
-    }
-    return result;
-}
+import { decode } from "@ethersproject/base64";
 export function decode_arithmetic(bytes) {
     let pos = 0;
     function u16() { return (bytes[pos++] << 8) | bytes[pos++]; }
@@ -132,36 +105,56 @@ export function decode_arithmetic(bytes) {
         }
     });
 }
-// returns an iterator which returns the next symbol
-export function read_payload(v) {
+export function read_compressed_payload(s) {
+    let v = decode_arithmetic(decode(s));
     let pos = 0;
     return () => v[pos++];
-}
-export function read_compressed_payload(bytes) {
-    return read_payload(decode_arithmetic(bytes));
 }
 // eg. [0,1,2,3...] => [0,-1,1,-2,...]
 export function signed(i) {
     return (i & 1) ? (~i >> 1) : (i >> 1);
 }
 function read_counts(n, next) {
-    let v = Array(n);
+    let v = [];
     for (let i = 0; i < n; i++)
         v[i] = 1 + next();
     return v;
 }
 function read_ascending(n, next) {
-    let v = Array(n);
+    let v = [];
     for (let i = 0, x = -1; i < n; i++)
         v[i] = x += 1 + next();
     return v;
 }
-function read_deltas(n, next) {
-    let v = Array(n);
+export function read_deltas(n, next) {
+    let v = [];
     for (let i = 0, x = 0; i < n; i++)
         v[i] = x += signed(next());
     return v;
 }
+// [123][5] => [0 3] [1 1] [0 0]
+export function read_sorted(next, prev = 0) {
+    let v = [];
+    while (true) {
+        let x = next();
+        let n = next();
+        if (!n)
+            break;
+        prev += x;
+        for (let i = 0; i < n; i++) {
+            v.push(prev + i);
+        }
+        prev += n + 1;
+    }
+    return v;
+}
+export function read_sorted_arrays(next) {
+    return read_array_while(() => {
+        let v = read_sorted(next);
+        return v.length ? v : null;
+    });
+}
+// return unsorted? unique array 
 export function read_member_array(next, lookup) {
     let v = read_ascending(next(), next);
     let n = next();
@@ -174,82 +167,93 @@ export function read_member_array(next, lookup) {
     }
     return lookup ? v.map(x => lookup[x]) : v;
 }
-// returns array of 
-// [x, ys] => single replacement rule
-// [x, ys, n, dx, dx] => linear map
-export function read_mapped_map(next) {
+// returns map of x => ys
+export function read_mapped(next) {
     let ret = [];
     while (true) {
         let w = next();
         if (w == 0)
             break;
-        ret.push(read_linear_table(w, next));
+        read_linear_table(w, next, ret);
     }
     while (true) {
         let w = next() - 1;
         if (w < 0)
             break;
-        ret.push(read_replacement_table(w, next));
+        read_replacement_table(w, next, ret);
     }
-    return fromEntries(flat(ret));
+    return ret;
 }
-export function read_zero_terminated_array(next) {
+// read until next is falsy
+// return array of read values
+export function read_array_while(next) {
     let v = [];
     while (true) {
-        let i = next();
-        if (i == 0)
+        let x = next(v.length);
+        if (!x)
             break;
-        v.push(i);
+        v.push(x);
     }
     return v;
 }
+// read w columns of length n
+// return as n rows of length w
 function read_transposed(n, w, next) {
-    let m = Array(n).fill(undefined).map(() => []);
+    let m = [];
+    for (let i = 0; i < n; i++)
+        m.push([]);
     for (let i = 0; i < w; i++) {
         read_deltas(n, next).forEach((x, j) => m[j].push(x));
     }
     return m;
 }
-function read_linear_table(w, next) {
+// returns [[x, ys], [x+dx, ys+dy], [x+2*dx, ys+2*dy], ...]
+// where dx/dy = steps, n = run size, w = length of y
+function read_linear_table(w, next, into) {
     let dx = 1 + next();
     let dy = next();
-    let vN = read_zero_terminated_array(next);
-    let m = read_transposed(vN.length, 1 + w, next);
-    return flat(m.map((v, i) => {
-        const x = v[0], ys = v.slice(1);
-        //let [x, ...ys] = v;
-        //return Array(vN[i]).fill().map((_, j) => {
-        return Array(vN[i]).fill(undefined).map((_, j) => {
+    let vN = read_array_while(next);
+    read_transposed(vN.length, 1 + w, next).forEach((v, i) => {
+        let n = vN[i];
+        let [x, ...ys] = v;
+        for (let j = 0; j < n; j++) {
             let j_dy = j * dy;
-            return [x + j * dx, ys.map(y => y + j_dy)];
-        });
-    }));
-}
-function read_replacement_table(w, next) {
-    let n = 1 + next();
-    let m = read_transposed(n, 1 + w, next);
-    return m.map(v => [v[0], v.slice(1)]);
-}
-export function read_emoji_trie(next) {
-    let sorted = read_member_array(next).sort((a, b) => a - b);
-    return read();
-    function read() {
-        let branches = [];
-        while (true) {
-            let keys = read_member_array(next, sorted);
-            if (keys.length == 0)
-                break;
-            branches.push({ set: new Set(keys), node: read() });
+            into.push([x + j * dx, ys.map(y => y + j_dy)]);
         }
-        branches.sort((a, b) => b.set.size - a.set.size); // sort by likelihood
-        let temp = next();
-        let valid = temp % 3;
-        temp = (temp / 3) | 0;
-        let fe0f = !!(temp & 1);
-        temp >>= 1;
-        let save = temp == 1;
-        let check = temp == 2;
-        return { branches, valid, fe0f, save, check };
+    });
+}
+// return [[x, ys...], ...]
+// where w = length of y
+function read_replacement_table(w, next, into) {
+    read_transposed(1 + next(), 1 + w, next).forEach(v => {
+        into.push([v[0], v.slice(1)]);
+    });
+}
+export function read_trie(next) {
+    let ret = [];
+    let sorted = read_sorted(next);
+    expand(decode([]), [], 0);
+    return ret; // not sorted
+    function decode(Q) {
+        let S = next(); // state: valid, save, check
+        let B = read_array_while(() => {
+            let cps = read_sorted(next).map(i => sorted[i]);
+            return cps.length ? decode(cps) : null;
+        });
+        return { S, B, Q };
+    }
+    function expand({ S, B }, cps, saved) {
+        if (S & 4 && saved === cps[cps.length - 1])
+            return;
+        if (S & 2)
+            saved = cps[cps.length - 1];
+        if (S & 1)
+            ret.push(cps);
+        for (let br of B) {
+            for (let cp of br.Q) {
+                expand(br, [...cps, cp], saved);
+            }
+        }
     }
 }
 //# sourceMappingURL=decoder.js.map

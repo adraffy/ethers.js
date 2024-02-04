@@ -10,43 +10,24 @@ var logger = new logger_1.Logger(_version_1.version);
 var lib_1 = require("./ens-normalize/lib");
 var Zeros = new Uint8Array(32);
 Zeros.fill(0);
-function checkComponent(comp) {
-    if (comp.length === 0) {
-        throw new Error("invalid ENS name; empty component");
-    }
-    return comp;
-}
 function ensNameSplit(name) {
-    var bytes = (0, strings_1.toUtf8Bytes)((0, lib_1.ens_normalize)(name));
-    var comps = [];
-    if (name.length === 0) {
-        return comps;
-    }
-    var last = 0;
-    for (var i = 0; i < bytes.length; i++) {
-        var d = bytes[i];
-        // A separator (i.e. "."); copy this component
-        if (d === 0x2e) {
-            comps.push(checkComponent(bytes.slice(last, i)));
-            last = i + 1;
-        }
-    }
-    // There was a stray separator at the end of the name
-    if (last >= bytes.length) {
-        throw new Error("invalid ENS name; empty component");
-    }
-    comps.push(checkComponent(bytes.slice(last)));
-    return comps;
+    // the empty string is 0-labels
+    // every label must be non-empty
+    if (!name)
+        return []; // note: "".split('.') === [""]
+    return (0, lib_1.ens_normalize)(name).split('.').map(function (x) { return (0, strings_1.toUtf8Bytes)(x); });
 }
 function ensNormalize(name) {
-    return ensNameSplit(name).map(function (comp) { return (0, strings_1.toUtf8String)(comp); }).join(".");
+    return (0, lib_1.ens_normalize)(name);
 }
 exports.ensNormalize = ensNormalize;
 function isValidName(name) {
+    // there must be 1+ labels
+    // every labels must be non-empty
     try {
-        return (ensNameSplit(name).length !== 0);
+        return !!(0, lib_1.ens_normalize)(name);
     }
-    catch (error) { }
+    catch (_a) { }
     return false;
 }
 exports.isValidName = isValidName;
@@ -63,15 +44,16 @@ function namehash(name) {
     return (0, bytes_1.hexlify)(result);
 }
 exports.namehash = namehash;
-function dnsEncode(name) {
+function dnsEncode(name, max) {
+    if ((max & 255) !== max)
+        max = 63; // max must be exactly 1 byte else 63 (old default)
     return (0, bytes_1.hexlify)((0, bytes_1.concat)(ensNameSplit(name).map(function (comp) {
-        // DNS does not allow components over 63 bytes in length
-        if (comp.length > 63) {
-            throw new Error("invalid DNS encoded entry; length exceeds 63 bytes");
+        if (comp.length > max) {
+            throw new Error("invalid DNS encoded entry; length exceeds " + max + " bytes");
         }
         var bytes = new Uint8Array(comp.length + 1);
+        bytes[0] = comp.length;
         bytes.set(comp, 1);
-        bytes[0] = bytes.length - 1;
         return bytes;
     }))) + "00";
 }

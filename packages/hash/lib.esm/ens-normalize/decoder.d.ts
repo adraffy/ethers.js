@@ -26,25 +26,18 @@
  *
  * See: https://github.com/adraffy/ens-normalize.js
  */
-export declare type Numbers = Uint8Array | Array<number>;
-export declare type NextFunc = (...args: Array<any>) => number;
-export declare function decode_arithmetic(bytes: Numbers): Array<number>;
-export declare function read_payload(v: Numbers): NextFunc;
-export declare function read_compressed_payload(bytes: Numbers): NextFunc;
+export declare type NextFunc = () => number;
+export declare type Mapping = [number, number[]];
+export declare function decode_arithmetic(bytes: Uint8Array): number[];
+export declare function read_compressed_payload(s: string): () => number;
 export declare function signed(i: number): number;
-export declare function read_member_array(next: NextFunc, lookup?: Record<number, number>): number[];
-export declare function read_mapped_map(next: NextFunc): Record<number, Array<number>>;
-export declare function read_zero_terminated_array(next: NextFunc): Array<number>;
-export declare type Branch = {
-    set: Set<number>;
-    node: Node;
-};
-export declare type Node = {
-    branches: Array<Branch>;
-    valid: number;
-    fe0f: boolean;
-    save: boolean;
-    check: boolean;
-};
-export declare function read_emoji_trie(next: NextFunc): Node;
+export declare function read_deltas(n: number, next: NextFunc): number[];
+export declare function read_sorted(next: NextFunc, prev?: number): number[];
+export declare function read_sorted_arrays(next: NextFunc): number[][];
+export declare function read_member_array(next: NextFunc, lookup?: {
+    [i: number]: number;
+}): number[];
+export declare function read_mapped(next: NextFunc): Mapping[];
+export declare function read_array_while<T>(next: (i: number) => T | null): T[];
+export declare function read_trie(next: NextFunc): number[][];
 //# sourceMappingURL=decoder.d.ts.map

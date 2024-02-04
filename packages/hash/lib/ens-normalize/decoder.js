@@ -27,36 +27,18 @@
  *
  * See: https://github.com/adraffy/ens-normalize.js
  */
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.read_emoji_trie = exports.read_zero_terminated_array = exports.read_mapped_map = exports.read_member_array = exports.signed = exports.read_compressed_payload = exports.read_payload = exports.decode_arithmetic = void 0;
-// https://github.com/behnammodi/polyfill/blob/master/array.polyfill.js
-function flat(array, depth) {
-    if (depth == null) {
-        depth = 1;
-    }
-    var result = [];
-    var forEach = result.forEach;
-    var flatDeep = function (arr, depth) {
-        forEach.call(arr, function (val) {
-            if (depth > 0 && Array.isArray(val)) {
-                flatDeep(val, depth - 1);
-            }
-            else {
-                result.push(val);
-            }
-        });
-    };
-    flatDeep(array, depth);
-    return result;
-}
-function fromEntries(array) {
-    var result = {};
-    for (var i = 0; i < array.length; i++) {
-        var value = array[i];
-        result[value[0]] = value[1];
-    }
-    return result;
-}
+exports.read_trie = exports.read_array_while = exports.read_mapped = exports.read_member_array = exports.read_sorted_arrays = exports.read_sorted = exports.read_deltas = exports.signed = exports.read_compressed_payload = exports.decode_arithmetic = void 0;
+var base64_1 = require("@ethersproject/base64");
 function decode_arithmetic(bytes) {
     var pos = 0;
     function u16() { return (bytes[pos++] << 8) | bytes[pos++]; }
@@ -136,14 +118,10 @@ function decode_arithmetic(bytes) {
     });
 }
 exports.decode_arithmetic = decode_arithmetic;
-// returns an iterator which returns the next symbol
-function read_payload(v) {
+function read_compressed_payload(s) {
+    var v = decode_arithmetic((0, base64_1.decode)(s));
     var pos = 0;
     return function () { return v[pos++]; };
-}
-exports.read_payload = read_payload;
-function read_compressed_payload(bytes) {
-    return read_payload(decode_arithmetic(bytes));
 }
 exports.read_compressed_payload = read_compressed_payload;
 // eg. [0,1,2,3...] => [0,-1,1,-2,...]
@@ -152,23 +130,50 @@ function signed(i) {
 }
 exports.signed = signed;
 function read_counts(n, next) {
-    var v = Array(n);
+    var v = [];
     for (var i = 0; i < n; i++)
         v[i] = 1 + next();
     return v;
 }
 function read_ascending(n, next) {
-    var v = Array(n);
+    var v = [];
     for (var i = 0, x = -1; i < n; i++)
         v[i] = x += 1 + next();
     return v;
 }
 function read_deltas(n, next) {
-    var v = Array(n);
+    var v = [];
     for (var i = 0, x = 0; i < n; i++)
         v[i] = x += signed(next());
     return v;
 }
+exports.read_deltas = read_deltas;
+// [123][5] => [0 3] [1 1] [0 0]
+function read_sorted(next, prev) {
+    if (prev === void 0) { prev = 0; }
+    var v = [];
+    while (true) {
+        var x = next();
+        var n = next();
+        if (!n)
+            break;
+        prev += x;
+        for (var i = 0; i < n; i++) {
+            v.push(prev + i);
+        }
+        prev += n + 1;
+    }
+    return v;
+}
+exports.read_sorted = read_sorted;
+function read_sorted_arrays(next) {
+    return read_array_while(function () {
+        var v = read_sorted(next);
+        return v.length ? v : null;
+    });
+}
+exports.read_sorted_arrays = read_sorted_arrays;
+// return unsorted? unique array 
 function read_member_array(next, lookup) {
     var v = read_ascending(next(), next);
     var n = next();
@@ -182,85 +187,102 @@ function read_member_array(next, lookup) {
     return lookup ? v.map(function (x) { return lookup[x]; }) : v;
 }
 exports.read_member_array = read_member_array;
-// returns array of 
-// [x, ys] => single replacement rule
-// [x, ys, n, dx, dx] => linear map
-function read_mapped_map(next) {
+// returns map of x => ys
+function read_mapped(next) {
     var ret = [];
     while (true) {
         var w = next();
         if (w == 0)
             break;
-        ret.push(read_linear_table(w, next));
+        read_linear_table(w, next, ret);
     }
     while (true) {
         var w = next() - 1;
         if (w < 0)
             break;
-        ret.push(read_replacement_table(w, next));
+        read_replacement_table(w, next, ret);
     }
-    return fromEntries(flat(ret));
+    return ret;
 }
-exports.read_mapped_map = read_mapped_map;
-function read_zero_terminated_array(next) {
+exports.read_mapped = read_mapped;
+// read until next is falsy
+// return array of read values
+function read_array_while(next) {
     var v = [];
     while (true) {
-        var i = next();
-        if (i == 0)
+        var x = next(v.length);
+        if (!x)
             break;
-        v.push(i);
+        v.push(x);
     }
     return v;
 }
-exports.read_zero_terminated_array = read_zero_terminated_array;
+exports.read_array_while = read_array_while;
+// read w columns of length n
+// return as n rows of length w
 function read_transposed(n, w, next) {
-    var m = Array(n).fill(undefined).map(function () { return []; });
+    var m = [];
+    for (var i = 0; i < n; i++)
+        m.push([]);
     for (var i = 0; i < w; i++) {
         read_deltas(n, next).forEach(function (x, j) { return m[j].push(x); });
     }
     return m;
 }
-function read_linear_table(w, next) {
+// returns [[x, ys], [x+dx, ys+dy], [x+2*dx, ys+2*dy], ...]
+// where dx/dy = steps, n = run size, w = length of y
+function read_linear_table(w, next, into) {
     var dx = 1 + next();
     var dy = next();
-    var vN = read_zero_terminated_array(next);
-    var m = read_transposed(vN.length, 1 + w, next);
-    return flat(m.map(function (v, i) {
+    var vN = read_array_while(next);
+    read_transposed(vN.length, 1 + w, next).forEach(function (v, i) {
+        var n = vN[i];
         var x = v[0], ys = v.slice(1);
-        //let [x, ...ys] = v;
-        //return Array(vN[i]).fill().map((_, j) => {
-        return Array(vN[i]).fill(undefined).map(function (_, j) {
+        var _loop_1 = function (j) {
             var j_dy = j * dy;
-            return [x + j * dx, ys.map(function (y) { return y + j_dy; })];
-        });
-    }));
-}
-function read_replacement_table(w, next) {
-    var n = 1 + next();
-    var m = read_transposed(n, 1 + w, next);
-    return m.map(function (v) { return [v[0], v.slice(1)]; });
-}
-function read_emoji_trie(next) {
-    var sorted = read_member_array(next).sort(function (a, b) { return a - b; });
-    return read();
-    function read() {
-        var branches = [];
-        while (true) {
-            var keys = read_member_array(next, sorted);
-            if (keys.length == 0)
-                break;
-            branches.push({ set: new Set(keys), node: read() });
+            into.push([x + j * dx, ys.map(function (y) { return y + j_dy; })]);
+        };
+        for (var j = 0; j < n; j++) {
+            _loop_1(j);
         }
-        branches.sort(function (a, b) { return b.set.size - a.set.size; }); // sort by likelihood
-        var temp = next();
-        var valid = temp % 3;
-        temp = (temp / 3) | 0;
-        var fe0f = !!(temp & 1);
-        temp >>= 1;
-        var save = temp == 1;
-        var check = temp == 2;
-        return { branches: branches, valid: valid, fe0f: fe0f, save: save, check: check };
+    });
+}
+// return [[x, ys...], ...]
+// where w = length of y
+function read_replacement_table(w, next, into) {
+    read_transposed(1 + next(), 1 + w, next).forEach(function (v) {
+        into.push([v[0], v.slice(1)]);
+    });
+}
+function read_trie(next) {
+    var ret = [];
+    var sorted = read_sorted(next);
+    expand(decode([]), [], 0);
+    return ret; // not sorted
+    function decode(Q) {
+        var S = next(); // state: valid, save, check
+        var B = read_array_while(function () {
+            var cps = read_sorted(next).map(function (i) { return sorted[i]; });
+            return cps.length ? decode(cps) : null;
+        });
+        return { S: S, B: B, Q: Q };
+    }
+    function expand(_a, cps, saved) {
+        var S = _a.S, B = _a.B;
+        if (S & 4 && saved === cps[cps.length - 1])
+            return;
+        if (S & 2)
+            saved = cps[cps.length - 1];
+        if (S & 1)
+            ret.push(cps);
+        for (var _i = 0, B_1 = B; _i < B_1.length; _i++) {
+            var br = B_1[_i];
+            for (var _b = 0, _c = br.Q; _b < _c.length; _b++) {
+                var cp = _c[_b];
+                expand(br, __spreadArray(__spreadArray([], cps, true), [cp], false), saved);
+            }
+        }
     }
 }
-exports.read_emoji_trie = read_emoji_trie;
+exports.read_trie = read_trie;
 //# sourceMappingURL=decoder.js.map

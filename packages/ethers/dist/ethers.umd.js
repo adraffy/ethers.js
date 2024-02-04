@@ -8874,6 +8874,51 @@
 
 	var _version$h = /*@__PURE__*/getDefaultExportFromCjs(_version$g);
 
+	var includeEns = createCommonjsModule(function (module, exports) {
+	"use strict";
+	/**
+	 * MIT License
+	 *
+	 * Copyright (c) 2021 Andrew Raffensperger
+	 *
+	 * Permission is hereby granted, free of charge, to any person obtaining a copy
+	 * of this software and associated documentation files (the "Software"), to deal
+	 * in the Software without restriction, including without limitation the rights
+	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	 * copies of the Software, and to permit persons to whom the Software is
+	 * furnished to do so, subject to the following conditions:
+	 *
+	 * The above copyright notice and this permission notice shall be included in all
+	 * copies or substantial portions of the Software.
+	 *
+	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	 * SOFTWARE.
+	 *
+	 * This is a near carbon-copy of the original source (link below) with the
+	 * TypeScript typings added and a few tweaks to make it ES3-compatible.
+	 *
+	 * See: https://github.com/adraffy/ens-normalize.js
+	 */
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.NSM_MAX = exports.FENCED = void 0;
+	// created 2023-09-25T01:01:55.148Z
+	// compressed base64-encoded blob for include-ens data
+	// source: https://github.com/adraffy/ens-normalize.js/blob/main/src/make.js
+	// see: https://github.com/adraffy/ens-normalize.js#security
+	// SHA-256: 0565ed049b9cf1614bb9e11ba7d8ac6a6fb96c893253d890f7e2b2884b9ded32
+	exports.default = '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';
+	exports.FENCED = { 8217: "apostrophe", 8260: "fraction slash", 12539: "middle dot" };
+	exports.NSM_MAX = 4;
+
+	});
+
+	var includeEns$1 = /*@__PURE__*/getDefaultExportFromCjs(includeEns);
+
 	var browserBase64 = createCommonjsModule(function (module, exports) {
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
@@ -8944,36 +8989,18 @@
 	 *
 	 * See: https://github.com/adraffy/ens-normalize.js
 	 */
+	var __spreadArray = (commonjsGlobal && commonjsGlobal.__spreadArray) || function (to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	};
 	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.read_emoji_trie = exports.read_zero_terminated_array = exports.read_mapped_map = exports.read_member_array = exports.signed = exports.read_compressed_payload = exports.read_payload = exports.decode_arithmetic = void 0;
-	// https://github.com/behnammodi/polyfill/blob/master/array.polyfill.js
-	function flat(array, depth) {
-	    if (depth == null) {
-	        depth = 1;
-	    }
-	    var result = [];
-	    var forEach = result.forEach;
-	    var flatDeep = function (arr, depth) {
-	        forEach.call(arr, function (val) {
-	            if (depth > 0 && Array.isArray(val)) {
-	                flatDeep(val, depth - 1);
-	            }
-	            else {
-	                result.push(val);
-	            }
-	        });
-	    };
-	    flatDeep(array, depth);
-	    return result;
-	}
-	function fromEntries(array) {
-	    var result = {};
-	    for (var i = 0; i < array.length; i++) {
-	        var value = array[i];
-	        result[value[0]] = value[1];
-	    }
-	    return result;
-	}
+	exports.read_trie = exports.read_array_while = exports.read_mapped = exports.read_member_array = exports.read_sorted_arrays = exports.read_sorted = exports.read_deltas = exports.signed = exports.read_compressed_payload = exports.decode_arithmetic = void 0;
+
 	function decode_arithmetic(bytes) {
 	    var pos = 0;
 	    function u16() { return (bytes[pos++] << 8) | bytes[pos++]; }
@@ -9053,14 +9080,10 @@
 	    });
 	}
 	exports.decode_arithmetic = decode_arithmetic;
-	// returns an iterator which returns the next symbol
-	function read_payload(v) {
+	function read_compressed_payload(s) {
+	    var v = decode_arithmetic((0, lib$9.decode)(s));
 	    var pos = 0;
 	    return function () { return v[pos++]; };
-	}
-	exports.read_payload = read_payload;
-	function read_compressed_payload(bytes) {
-	    return read_payload(decode_arithmetic(bytes));
 	}
 	exports.read_compressed_payload = read_compressed_payload;
 	// eg. [0,1,2,3...] => [0,-1,1,-2,...]
@@ -9069,23 +9092,50 @@
 	}
 	exports.signed = signed;
 	function read_counts(n, next) {
-	    var v = Array(n);
+	    var v = [];
 	    for (var i = 0; i < n; i++)
 	        v[i] = 1 + next();
 	    return v;
 	}
 	function read_ascending(n, next) {
-	    var v = Array(n);
+	    var v = [];
 	    for (var i = 0, x = -1; i < n; i++)
 	        v[i] = x += 1 + next();
 	    return v;
 	}
 	function read_deltas(n, next) {
-	    var v = Array(n);
+	    var v = [];
 	    for (var i = 0, x = 0; i < n; i++)
 	        v[i] = x += signed(next());
 	    return v;
 	}
+	exports.read_deltas = read_deltas;
+	// [123][5] => [0 3] [1 1] [0 0]
+	function read_sorted(next, prev) {
+	    if (prev === void 0) { prev = 0; }
+	    var v = [];
+	    while (true) {
+	        var x = next();
+	        var n = next();
+	        if (!n)
+	            break;
+	        prev += x;
+	        for (var i = 0; i < n; i++) {
+	            v.push(prev + i);
+	        }
+	        prev += n + 1;
+	    }
+	    return v;
+	}
+	exports.read_sorted = read_sorted;
+	function read_sorted_arrays(next) {
+	    return read_array_while(function () {
+	        var v = read_sorted(next);
+	        return v.length ? v : null;
+	    });
+	}
+	exports.read_sorted_arrays = read_sorted_arrays;
+	// return unsorted? unique array 
 	function read_member_array(next, lookup) {
 	    var v = read_ascending(next(), next);
 	    var n = next();
@@ -9099,136 +9149,168 @@
 	    return lookup ? v.map(function (x) { return lookup[x]; }) : v;
 	}
 	exports.read_member_array = read_member_array;
-	// returns array of 
-	// [x, ys] => single replacement rule
-	// [x, ys, n, dx, dx] => linear map
-	function read_mapped_map(next) {
+	// returns map of x => ys
+	function read_mapped(next) {
 	    var ret = [];
 	    while (true) {
 	        var w = next();
 	        if (w == 0)
 	            break;
-	        ret.push(read_linear_table(w, next));
+	        read_linear_table(w, next, ret);
 	    }
 	    while (true) {
 	        var w = next() - 1;
 	        if (w < 0)
 	            break;
-	        ret.push(read_replacement_table(w, next));
+	        read_replacement_table(w, next, ret);
 	    }
-	    return fromEntries(flat(ret));
+	    return ret;
 	}
-	exports.read_mapped_map = read_mapped_map;
-	function read_zero_terminated_array(next) {
+	exports.read_mapped = read_mapped;
+	// read until next is falsy
+	// return array of read values
+	function read_array_while(next) {
 	    var v = [];
 	    while (true) {
-	        var i = next();
-	        if (i == 0)
+	        var x = next(v.length);
+	        if (!x)
 	            break;
-	        v.push(i);
+	        v.push(x);
 	    }
 	    return v;
 	}
-	exports.read_zero_terminated_array = read_zero_terminated_array;
+	exports.read_array_while = read_array_while;
+	// read w columns of length n
+	// return as n rows of length w
 	function read_transposed(n, w, next) {
-	    var m = Array(n).fill(undefined).map(function () { return []; });
+	    var m = [];
+	    for (var i = 0; i < n; i++)
+	        m.push([]);
 	    for (var i = 0; i < w; i++) {
 	        read_deltas(n, next).forEach(function (x, j) { return m[j].push(x); });
 	    }
 	    return m;
 	}
-	function read_linear_table(w, next) {
+	// returns [[x, ys], [x+dx, ys+dy], [x+2*dx, ys+2*dy], ...]
+	// where dx/dy = steps, n = run size, w = length of y
+	function read_linear_table(w, next, into) {
 	    var dx = 1 + next();
 	    var dy = next();
-	    var vN = read_zero_terminated_array(next);
-	    var m = read_transposed(vN.length, 1 + w, next);
-	    return flat(m.map(function (v, i) {
+	    var vN = read_array_while(next);
+	    read_transposed(vN.length, 1 + w, next).forEach(function (v, i) {
+	        var n = vN[i];
 	        var x = v[0], ys = v.slice(1);
-	        //let [x, ...ys] = v;
-	        //return Array(vN[i]).fill().map((_, j) => {
-	        return Array(vN[i]).fill(undefined).map(function (_, j) {
+	        var _loop_1 = function (j) {
 	            var j_dy = j * dy;
-	            return [x + j * dx, ys.map(function (y) { return y + j_dy; })];
-	        });
-	    }));
-	}
-	function read_replacement_table(w, next) {
-	    var n = 1 + next();
-	    var m = read_transposed(n, 1 + w, next);
-	    return m.map(function (v) { return [v[0], v.slice(1)]; });
-	}
-	function read_emoji_trie(next) {
-	    var sorted = read_member_array(next).sort(function (a, b) { return a - b; });
-	    return read();
-	    function read() {
-	        var branches = [];
-	        while (true) {
-	            var keys = read_member_array(next, sorted);
-	            if (keys.length == 0)
-	                break;
-	            branches.push({ set: new Set(keys), node: read() });
+	            into.push([x + j * dx, ys.map(function (y) { return y + j_dy; })]);
+	        };
+	        for (var j = 0; j < n; j++) {
+	            _loop_1(j);
 	        }
-	        branches.sort(function (a, b) { return b.set.size - a.set.size; }); // sort by likelihood
-	        var temp = next();
-	        var valid = temp % 3;
-	        temp = (temp / 3) | 0;
-	        var fe0f = !!(temp & 1);
-	        temp >>= 1;
-	        var save = temp == 1;
-	        var check = temp == 2;
-	        return { branches: branches, valid: valid, fe0f: fe0f, save: save, check: check };
+	    });
+	}
+	// return [[x, ys...], ...]
+	// where w = length of y
+	function read_replacement_table(w, next, into) {
+	    read_transposed(1 + next(), 1 + w, next).forEach(function (v) {
+	        into.push([v[0], v.slice(1)]);
+	    });
+	}
+	function read_trie(next) {
+	    var ret = [];
+	    var sorted = read_sorted(next);
+	    expand(decode([]), [], 0);
+	    return ret; // not sorted
+	    function decode(Q) {
+	        var S = next(); // state: valid, save, check
+	        var B = read_array_while(function () {
+	            var cps = read_sorted(next).map(function (i) { return sorted[i]; });
+	            return cps.length ? decode(cps) : null;
+	        });
+	        return { S: S, B: B, Q: Q };
+	    }
+	    function expand(_a, cps, saved) {
+	        var S = _a.S, B = _a.B;
+	        if (S & 4 && saved === cps[cps.length - 1])
+	            return;
+	        if (S & 2)
+	            saved = cps[cps.length - 1];
+	        if (S & 1)
+	            ret.push(cps);
+	        for (var _i = 0, B_1 = B; _i < B_1.length; _i++) {
+	            var br = B_1[_i];
+	            for (var _b = 0, _c = br.Q; _b < _c.length; _b++) {
+	                var cp = _c[_b];
+	                expand(br, __spreadArray(__spreadArray([], cps, true), [cp], false), saved);
+	            }
+	        }
 	    }
 	}
-	exports.read_emoji_trie = read_emoji_trie;
+	exports.read_trie = read_trie;
 
 	});
 
 	var decoder$1 = /*@__PURE__*/getDefaultExportFromCjs(decoder);
 
-	var include = createCommonjsModule(function (module, exports) {
+	var utils = createCommonjsModule(function (module, exports) {
 	"use strict";
-	/**
-	 * MIT License
-	 *
-	 * Copyright (c) 2021 Andrew Raffensperger
-	 *
-	 * Permission is hereby granted, free of charge, to any person obtaining a copy
-	 * of this software and associated documentation files (the "Software"), to deal
-	 * in the Software without restriction, including without limitation the rights
-	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	 * copies of the Software, and to permit persons to whom the Software is
-	 * furnished to do so, subject to the following conditions:
-	 *
-	 * The above copyright notice and this permission notice shall be included in all
-	 * copies or substantial portions of the Software.
-	 *
-	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-	 * SOFTWARE.
-	 *
-	 * This is a near carbon-copy of the original source (link below) with the
-	 * TypeScript typings added and a few tweaks to make it ES3-compatible.
-	 *
-	 * See: https://github.com/adraffy/ens-normalize.js
-	 */
 	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.getData = void 0;
-
-
-	function getData() {
-	    return (0, decoder.read_compressed_payload)((0, lib$9.decode)('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'));
+	exports.array_replace = exports.compare_arrays = exports.str_from_cps = exports.explode_cp = exports.quote_cp = exports.hex_cp = void 0;
+	function hex_cp(cp) {
+	    return cp.toString(16).toUpperCase().padStart(2, '0');
 	}
-	exports.getData = getData;
+	exports.hex_cp = hex_cp;
+	function quote_cp(cp) {
+	    return "{" + hex_cp(cp) + "}"; // raffy convention: like "\u{X}" w/o the "\u"
+	}
+	exports.quote_cp = quote_cp;
+	function explode_cp(s) {
+	    var cps = [];
+	    for (var pos = 0, len = s.length; pos < len;) {
+	        var cp = s.codePointAt(pos);
+	        pos += cp < 0x10000 ? 1 : 2;
+	        cps.push(cp);
+	    }
+	    return cps;
+	}
+	exports.explode_cp = explode_cp;
+	function str_from_cps(cps) {
+	    var chunk = 4096;
+	    var len = cps.length;
+	    if (len < chunk)
+	        return String.fromCodePoint.apply(String, cps);
+	    var buf = [];
+	    for (var i = 0; i < len;) {
+	        buf.push(String.fromCodePoint.apply(String, cps.slice(i, i += chunk)));
+	    }
+	    return buf.join('');
+	}
+	exports.str_from_cps = str_from_cps;
+	function compare_arrays(a, b) {
+	    var n = a.length;
+	    var c = n - b.length;
+	    for (var i = 0; c == 0 && i < n; i++)
+	        c = a[i] - b[i];
+	    return c;
+	}
+	exports.compare_arrays = compare_arrays;
+	function array_replace(v, a, b) {
+	    var prev = 0;
+	    while (true) {
+	        var next = v.indexOf(a, prev);
+	        if (next < 0)
+	            break;
+	        v[next] = b;
+	        prev = next + 1;
+	    }
+	}
+	exports.array_replace = array_replace;
 
 	});
 
-	var include$1 = /*@__PURE__*/getDefaultExportFromCjs(include);
+	var utils$1 = /*@__PURE__*/getDefaultExportFromCjs(utils);
 
-	var lib$a = createCommonjsModule(function (module, exports) {
+	var includeNf = createCommonjsModule(function (module, exports) {
 	"use strict";
 	/**
 	 * MIT License
@@ -9259,120 +9341,954 @@
 	 * See: https://github.com/adraffy/ens-normalize.js
 	 */
 	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.ens_normalize = exports.ens_normalize_post_check = void 0;
+	// created 2023-09-25T01:01:55.148Z
+	// compressed base64-encoded blob for include-nf data
+	// source: https://github.com/adraffy/ens-normalize.js/blob/main/src/make.js
+	// see: https://github.com/adraffy/ens-normalize.js#security
+	// SHA-256: a974b6f8541fc29d919bc85118af0a44015851fab5343f8679cb31be2bdb209e
+	exports.default = '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';
 
+	});
 
-	var r = (0, include.getData)();
+	var includeNf$1 = /*@__PURE__*/getDefaultExportFromCjs(includeNf);
 
-	// @TODO: This should be lazily loaded
-	var VALID = new Set((0, decoder.read_member_array)(r));
-	var IGNORED = new Set((0, decoder.read_member_array)(r));
-	var MAPPED = (0, decoder.read_mapped_map)(r);
-	var EMOJI_ROOT = (0, decoder.read_emoji_trie)(r);
-	//const NFC_CHECK = new Set(read_member_array(r, Array.from(VALID.values()).sort((a, b) => a - b)));
-	//const STOP = 0x2E;
-	var HYPHEN = 0x2D;
-	var UNDERSCORE = 0x5F;
-	function explode_cp(name) {
-	    return (0, lib$8.toUtf8CodePoints)(name);
+	var set = createCommonjsModule(function (module, exports) {
+	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.set_add_many = void 0;
+	function set_add_many(set, v) {
+	    for (var _i = 0, v_1 = v; _i < v_1.length; _i++) {
+	        var x = v_1[_i];
+	        set[x] = x;
+	    }
 	}
-	function filter_fe0f(cps) {
-	    return cps.filter(function (cp) { return cp != 0xFE0F; });
-	}
-	function ens_normalize_post_check(name) {
-	    for (var _i = 0, _a = name.split('.'); _i < _a.length; _i++) {
-	        var label = _a[_i];
-	        var cps = explode_cp(label);
-	        try {
-	            for (var i = cps.lastIndexOf(UNDERSCORE) - 1; i >= 0; i--) {
-	                if (cps[i] !== UNDERSCORE) {
-	                    throw new Error("underscore only allowed at start");
-	                }
-	            }
-	            if (cps.length >= 4 && cps.every(function (cp) { return cp < 0x80; }) && cps[2] === HYPHEN && cps[3] === HYPHEN) {
-	                throw new Error("invalid label extension");
-	            }
-	        }
-	        catch (err) {
-	            throw new Error("Invalid label \"" + label + "\": " + err.message);
+	exports.set_add_many = set_add_many;
+
+	});
+
+	var set$1 = /*@__PURE__*/getDefaultExportFromCjs(set);
+
+	var nf = createCommonjsModule(function (module, exports) {
+	"use strict";
+	// https://unicode.org/reports/tr15/
+	// for reference implementation
+	// see: /derive/nf.js
+	var __spreadArray = (commonjsGlobal && commonjsGlobal.__spreadArray) || function (to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
 	        }
 	    }
-	    return name;
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	};
+	var __importDefault = (commonjsGlobal && commonjsGlobal.__importDefault) || function (mod) {
+	    return (mod && mod.__esModule) ? mod : { "default": mod };
+	};
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.nfc = exports.nfd = void 0;
+	var include_nf_1 = __importDefault(includeNf);
+
+
+	// algorithmic hangul
+	// https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf (page 144)
+	var S0 = 0xAC00;
+	var L0 = 0x1100;
+	var V0 = 0x1161;
+	var T0 = 0x11A7;
+	var L_COUNT = 19;
+	var V_COUNT = 21;
+	var T_COUNT = 28;
+	var N_COUNT = V_COUNT * T_COUNT;
+	var S_COUNT = L_COUNT * N_COUNT;
+	var S1 = S0 + S_COUNT;
+	var L1 = L0 + L_COUNT;
+	var V1 = V0 + V_COUNT;
+	var T1 = T0 + T_COUNT;
+	function unpack_cc(packed) {
+	    return (packed >> 24) & 0xFF;
 	}
-	exports.ens_normalize_post_check = ens_normalize_post_check;
+	function unpack_cp(packed) {
+	    return packed & 0xFFFFFF;
+	}
+	var SHIFTED_RANK;
+	var EXCLUSIONS = {};
+	var DECOMP = {};
+	var RECOMP = {};
+	function init() {
+	    if (SHIFTED_RANK)
+	        return;
+	    SHIFTED_RANK = {};
+	    var r = (0, decoder.read_compressed_payload)(include_nf_1.default);
+	    (0, decoder.read_sorted_arrays)(r).forEach(function (v, i) {
+	        for (var _i = 0, v_1 = v; _i < v_1.length; _i++) {
+	            var x = v_1[_i];
+	            SHIFTED_RANK[x] = (i + 1) << 24; // pre-shifted
+	        }
+	    });
+	    (0, set.set_add_many)(EXCLUSIONS, (0, decoder.read_sorted)(r));
+	    for (var _i = 0, _a = (0, decoder.read_mapped)(r); _i < _a.length; _i++) {
+	        var _b = _a[_i], cp = _b[0], cps = _b[1];
+	        if (!EXCLUSIONS[cp] && cps.length == 2) {
+	            var a = cps[0], b = cps[1];
+	            var bucket = RECOMP[a];
+	            if (!bucket)
+	                RECOMP[a] = bucket = {};
+	            bucket[b] = cp;
+	        }
+	        DECOMP[cp] = cps.reverse(); // stored reversed
+	    }
+	}
+	function is_hangul(cp) {
+	    return cp >= S0 && cp < S1;
+	}
+	function compose_pair(a, b) {
+	    if (a >= L0 && a < L1 && b >= V0 && b < V1) {
+	        return S0 + (a - L0) * N_COUNT + (b - V0) * T_COUNT;
+	    }
+	    else if (is_hangul(a) && b > T0 && b < T1 && (a - S0) % T_COUNT == 0) {
+	        return a + (b - T0);
+	    }
+	    else {
+	        var recomp = RECOMP[a];
+	        if (recomp) {
+	            var recomp2 = recomp[b];
+	            if (recomp2) {
+	                return recomp2;
+	            }
+	        }
+	        return -1;
+	    }
+	}
+	function decomposed(cps) {
+	    init();
+	    var ret = [];
+	    var buf = [];
+	    var check_order = false;
+	    function add(cp) {
+	        var cc = SHIFTED_RANK[cp];
+	        if (cc) {
+	            check_order = true;
+	            cp |= cc;
+	        }
+	        ret.push(cp);
+	    }
+	    for (var _i = 0, cps_1 = cps; _i < cps_1.length; _i++) {
+	        var cp = cps_1[_i];
+	        while (true) {
+	            if (cp < 0x80) {
+	                ret.push(cp);
+	            }
+	            else if (is_hangul(cp)) {
+	                var s_index = cp - S0;
+	                var l_index = s_index / N_COUNT | 0;
+	                var v_index = (s_index % N_COUNT) / T_COUNT | 0;
+	                var t_index = s_index % T_COUNT;
+	                add(L0 + l_index);
+	                add(V0 + v_index);
+	                if (t_index > 0)
+	                    add(T0 + t_index);
+	            }
+	            else {
+	                var mapped = DECOMP[cp];
+	                if (mapped) {
+	                    buf.push.apply(buf, mapped);
+	                }
+	                else {
+	                    add(cp);
+	                }
+	            }
+	            if (!buf.length)
+	                break;
+	            cp = buf.pop();
+	        }
+	    }
+	    if (check_order && ret.length > 1) {
+	        var prev_cc = unpack_cc(ret[0]);
+	        for (var i = 1; i < ret.length; i++) {
+	            var cc = unpack_cc(ret[i]);
+	            if (cc == 0 || prev_cc <= cc) {
+	                prev_cc = cc;
+	                continue;
+	            }
+	            var j = i - 1;
+	            while (true) {
+	                var tmp = ret[j + 1];
+	                ret[j + 1] = ret[j];
+	                ret[j] = tmp;
+	                if (!j)
+	                    break;
+	                prev_cc = unpack_cc(ret[--j]);
+	                if (prev_cc <= cc)
+	                    break;
+	            }
+	            prev_cc = unpack_cc(ret[i]);
+	        }
+	    }
+	    return ret;
+	}
+	function composed_from_decomposed(v) {
+	    var ret = [];
+	    var stack = [];
+	    var prev_cp = -1;
+	    var prev_cc = 0;
+	    for (var _i = 0, v_2 = v; _i < v_2.length; _i++) {
+	        var packed = v_2[_i];
+	        var cc = unpack_cc(packed);
+	        var cp = unpack_cp(packed);
+	        if (prev_cp == -1) {
+	            if (cc == 0) {
+	                prev_cp = cp;
+	            }
+	            else {
+	                ret.push(cp);
+	            }
+	        }
+	        else if (prev_cc > 0 && prev_cc >= cc) {
+	            if (cc == 0) {
+	                ret.push.apply(ret, __spreadArray([prev_cp], stack, false));
+	                stack.length = 0;
+	                prev_cp = cp;
+	            }
+	            else {
+	                stack.push(cp);
+	            }
+	            prev_cc = cc;
+	        }
+	        else {
+	            var composed = compose_pair(prev_cp, cp);
+	            if (composed >= 0) {
+	                prev_cp = composed;
+	            }
+	            else if (prev_cc == 0 && cc == 0) {
+	                ret.push(prev_cp);
+	                prev_cp = cp;
+	            }
+	            else {
+	                stack.push(cp);
+	                prev_cc = cc;
+	            }
+	        }
+	    }
+	    if (prev_cp >= 0) {
+	        ret.push.apply(ret, __spreadArray([prev_cp], stack, false));
+	    }
+	    return ret;
+	}
+	// note: cps can be iterable
+	function nfd(cps) {
+	    return decomposed(cps).map(unpack_cp);
+	}
+	exports.nfd = nfd;
+	function nfc(cps) {
+	    return composed_from_decomposed(decomposed(cps));
+	}
+	exports.nfc = nfc;
+
+	});
+
+	var nf$1 = /*@__PURE__*/getDefaultExportFromCjs(nf);
+
+	var lib$a = createCommonjsModule(function (module, exports) {
+	"use strict";
+	var __createBinding = (commonjsGlobal && commonjsGlobal.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	}));
+	var __setModuleDefault = (commonjsGlobal && commonjsGlobal.__setModuleDefault) || (Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	});
+	var __importStar = (commonjsGlobal && commonjsGlobal.__importStar) || function (mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+	    __setModuleDefault(result, mod);
+	    return result;
+	};
+	var __spreadArray = (commonjsGlobal && commonjsGlobal.__spreadArray) || function (to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	};
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.ens_beautify = exports.ens_normalize = void 0;
+	var include_ens_1 = __importStar(includeEns);
+
+
+
+
+	var STOP_CH = '.';
+	var FE0F = 0xFE0F;
+	var UNIQUE_PH = 1;
+	function group_has_cp(g, cp) {
+	    // 20230913: keep primary and secondary distinct instead of creating valid union
+	    return g.P[cp] || g.Q[cp];
+	}
+	var MAPPED;
+	var CM = {};
+	var NSM = {};
+	var IGNORED = {};
+	var ESCAPE = {};
+	var GROUPS;
+	var WHOLE_VALID = {};
+	var WHOLE_MAP = {};
+	var VALID = {};
+	var EMOJI_ROOT = {};
+	function init() {
+	    if (MAPPED)
+	        return;
+	    var r = (0, decoder.read_compressed_payload)(include_ens_1.default);
+	    MAPPED = {};
+	    (0, decoder.read_mapped)(r).forEach(function (_a) {
+	        var x = _a[0], ys = _a[1];
+	        return MAPPED[x] = ys;
+	    });
+	    (0, set.set_add_many)(IGNORED, (0, decoder.read_sorted)(r)); // ignored characters are not valid, so just read raw codepoints
+	    // 20230217: we still need all CM for proper error formatting
+	    // but norm only needs NSM subset that are potentially-valid
+	    var tempCM = (0, decoder.read_sorted)(r);
+	    (0, set.set_add_many)(NSM, (0, decoder.read_sorted)(r).map(function (i) { return tempCM[i]; }));
+	    (0, set.set_add_many)(CM, tempCM);
+	    (0, set.set_add_many)(ESCAPE, (0, decoder.read_sorted)(r)); // characters that should not be printed
+	    (0, decoder.read_sorted)(r); // dont need this
+	    var chunks = (0, decoder.read_sorted_arrays)(r);
+	    var unrestricted = r();
+	    //const read_chunked = () => new Set(read_sorted(r).flatMap(i => chunks[i]).concat(read_sorted(r)));
+	    var read_chunked = function () {
+	        // 20230921: build set in parts, 2x faster
+	        var set$1 = {};
+	        (0, decoder.read_sorted)(r).forEach(function (i) { return (0, set.set_add_many)(set$1, chunks[i]); });
+	        (0, set.set_add_many)(set$1, (0, decoder.read_sorted)(r));
+	        return set$1;
+	    };
+	    GROUPS = (0, decoder.read_array_while)(function (i) {
+	        // minifier property mangling seems unsafe
+	        // so these are manually renamed to single chars
+	        var v = (0, decoder.read_array_while)(r).map(function (x) { return x + 0x60; });
+	        if (!v.length)
+	            return null;
+	        var R = i >= unrestricted; // unrestricted then restricted
+	        v[0] -= 32; // capitalize
+	        var N = (0, utils.str_from_cps)(v);
+	        if (R)
+	            N = "Restricted[" + N + "]";
+	        var P = read_chunked(); // primary
+	        var Q = read_chunked(); // secondary
+	        var M = !r(); // not-whitelisted, check for NSM
+	        return { N: N, P: P, Q: Q, M: M, R: R };
+	    });
+	    // decode compressed wholes
+	    var whole_valid = (0, decoder.read_sorted)(r);
+	    (0, set.set_add_many)(WHOLE_VALID, whole_valid);
+	    var whole_backref = [];
+	    var wholes = [];
+	    (0, decoder.read_sorted)(r).concat(whole_valid).sort(function (a, b) { return a - b; }).forEach(function (cp, i) {
+	        var d = r();
+	        var w;
+	        if (d) {
+	            w = whole_backref[i - d];
+	        }
+	        else {
+	            w = { V: [], M: {} };
+	            wholes.push(w);
+	        }
+	        whole_backref[i] = w;
+	        w.V.push(cp); // add to member set
+	        if (!WHOLE_VALID[cp]) {
+	            WHOLE_MAP[cp] = w; // register with whole map
+	        }
+	    });
+	    var _loop_1 = function (V, M) {
+	        // connect all groups that have each whole character
+	        var active = {};
+	        var recs = [];
+	        var _loop_3 = function (cp) {
+	            var gs = GROUPS.filter(function (g) { return group_has_cp(g, cp); });
+	            var rec = recs.find(function (_a) {
+	                var G = _a.G;
+	                return gs.some(function (g) { return G[g.N]; });
+	            });
+	            if (!rec) {
+	                rec = { G: {}, V: [] };
+	                recs.push(rec);
+	            }
+	            rec.V.push(cp);
+	            gs.forEach(function (g) { return rec.G[g.N] = active[g.N] = g; });
+	        };
+	        for (var _m = 0, V_1 = V; _m < V_1.length; _m++) {
+	            var cp = V_1[_m];
+	            _loop_3(cp);
+	        }
+	        // per character cache groups which are not a member of the extent
+	        var union = Object.values(active);
+	        var _loop_4 = function (G, V_3) {
+	            var complement = {};
+	            union.forEach(function (g) {
+	                if (!G[g.N])
+	                    complement[g.N] = g; // groups not covered by the extent
+	            });
+	            for (var _q = 0, V_2 = V_3; _q < V_2.length; _q++) {
+	                var cp = V_2[_q];
+	                M[cp] = complement; // this is the same reference
+	            }
+	        };
+	        for (var _o = 0, recs_1 = recs; _o < recs_1.length; _o++) {
+	            var _p = recs_1[_o], G = _p.G, V_3 = _p.V;
+	            _loop_4(G, V_3);
+	        }
+	    };
+	    // compute confusable-extent complements
+	    // usage: WHOLE_MAP.get(cp).M.get(cp) = complement set
+	    for (var _i = 0, wholes_1 = wholes; _i < wholes_1.length; _i++) {
+	        var _a = wholes_1[_i], V = _a.V, M = _a.M;
+	        _loop_1(V, M);
+	    }
+	    // compute valid set
+	    // 20230924: VALID was union but can be re-used	
+	    var multi = {}; // exists in 2+ groups
+	    var add_to_union = function (cp) { return VALID[cp] ? multi[cp] = cp : VALID[cp] = cp; };
+	    for (var _b = 0, GROUPS_1 = GROUPS; _b < GROUPS_1.length; _b++) {
+	        var g = GROUPS_1[_b];
+	        for (var _c = 0, _d = Object.values(g.P); _c < _d.length; _c++) {
+	            var cp = _d[_c];
+	            add_to_union(cp);
+	        }
+	        for (var _e = 0, _f = Object.values(g.Q); _e < _f.length; _e++) {
+	            var cp = _f[_e];
+	            add_to_union(cp);
+	        }
+	    }
+	    // dual purpose WHOLE_MAP: return placeholder if unique non-confusable
+	    for (var _g = 0, _h = Object.values(VALID); _g < _h.length; _g++) {
+	        var cp = _h[_g];
+	        if (!WHOLE_MAP[cp] && !multi[cp]) {
+	            WHOLE_MAP[cp] = UNIQUE_PH;
+	        }
+	    }
+	    // add all decomposed parts
+	    // see derive: "Valid is Closed (via Brute-force)"
+	    (0, set.set_add_many)(VALID, (0, nf.nfd)(Object.values(VALID)));
+	    // decode emoji
+	    // 20230719: emoji are now fully-expanded to avoid quirk logic 
+	    var emojis = (0, decoder.read_trie)(r).sort(utils.compare_arrays);
+	    for (var _j = 0, emojis_1 = emojis; _j < emojis_1.length; _j++) {
+	        var cps = emojis_1[_j];
+	        // 20230719: change to *slightly* stricter algorithm which disallows 
+	        // insertion of misplaced FE0F in emoji sequences (matching ENSIP-15)
+	        // example: beautified [A B] (eg. flag emoji) 
+	        //  before: allow: [A FE0F B], error: [A FE0F FE0F B] 
+	        //   after: error: both
+	        // note: this code now matches ENSNormalize.{cs,java} logic
+	        var prev = [EMOJI_ROOT];
+	        var _loop_2 = function (cp) {
+	            var next = prev.map(function (node) {
+	                var child = node[cp];
+	                if (!child)
+	                    node[cp] = child = {};
+	                return child;
+	            });
+	            if (cp === FE0F) {
+	                prev.push.apply(prev, next); // less than 20 elements
+	            }
+	            else {
+	                prev = next;
+	            }
+	        };
+	        for (var _k = 0, cps_1 = cps; _k < cps_1.length; _k++) {
+	            var cp = cps_1[_k];
+	            _loop_2(cp);
+	        }
+	        for (var _l = 0, prev_1 = prev; _l < prev_1.length; _l++) {
+	            var x = prev_1[_l];
+	            x.V = cps;
+	        }
+	    }
+	}
+	// if escaped: {HEX}
+	//       else: "x" {HEX}
+	function quoted_cp(cp) {
+	    return (cp in ESCAPE ? '' : bidi_qq(safe_str_from_cps([cp])) + " ") + (0, utils.quote_cp)(cp);
+	}
+	// 20230211: some messages can be mixed-directional and result in spillover
+	// use 200E after a quoted string to force the remainder of a string from 
+	// acquring the direction of the quote
+	// https://www.w3.org/International/questions/qa-bidi-unicode-controls#exceptions
+	function bidi_qq(s) {
+	    return "\"" + s + "\"\u200E"; // strong LTR
+	}
+	function check_label_extension(cps) {
+	    var HYPHEN = 0x2D;
+	    if (cps.length >= 4 && cps[2] == HYPHEN && cps[3] == HYPHEN) {
+	        throw new Error("invalid label extension: \"" + (0, utils.str_from_cps)(cps.slice(0, 4)) + "\""); // this can only be ascii so cant be bidi
+	    }
+	}
+	function check_leading_underscore(cps) {
+	    var UNDERSCORE = 0x5F;
+	    for (var i = cps.lastIndexOf(UNDERSCORE); i > 0;) {
+	        if (cps[--i] !== UNDERSCORE) {
+	            throw new Error('underscore allowed only at start');
+	        }
+	    }
+	}
+	// check that a fenced cp is not leading, trailing, or touching another fenced cp
+	function check_fenced(cps) {
+	    var cp = cps[0];
+	    var prev = include_ens_1.FENCED[cp];
+	    if (prev)
+	        throw error_placement("leading " + prev);
+	    var n = cps.length;
+	    var last = -1; // prevents trailing from throwing
+	    for (var i = 1; i < n; i++) {
+	        cp = cps[i];
+	        var match = include_ens_1.FENCED[cp];
+	        if (match) {
+	            // since cps[0] isn't fenced, cps[1] cannot throw
+	            if (last == i)
+	                throw error_placement(prev + " + " + match);
+	            last = i + 1;
+	            prev = match;
+	        }
+	    }
+	    if (last == n)
+	        throw error_placement("trailing " + prev);
+	}
+	// create a safe to print string 
+	// invisibles are escaped
+	// leading cm uses placeholder
+	// if cps exceed max, middle truncate with ellipsis
+	// quoter(cp) => string, eg. 3000 => "{3000}"
+	// note: in html, you'd call this function then replace [<>&] with entities
+	function safe_str_from_cps(cps, max) {
+	    if (max === void 0) { max = Infinity; }
+	    //if (Number.isInteger(cps)) cps = [cps];
+	    //if (!Array.isArray(cps)) throw new TypeError(`expected codepoints`);
+	    var buf = [];
+	    if (cps[0] in CM)
+	        buf.push('◌');
+	    if (cps.length > max) {
+	        max >>= 1;
+	        cps = __spreadArray(__spreadArray(__spreadArray([], cps.slice(0, max), true), [0x2026], false), cps.slice(-max), true);
+	    }
+	    var prev = 0;
+	    var n = cps.length;
+	    for (var i = 0; i < n; i++) {
+	        var cp = cps[i];
+	        if (cp in ESCAPE) {
+	            buf.push((0, utils.str_from_cps)(cps.slice(prev, i)));
+	            buf.push((0, utils.quote_cp)(cp));
+	            prev = i + 1;
+	        }
+	    }
+	    buf.push((0, utils.str_from_cps)(cps.slice(prev, n)));
+	    return buf.join('');
+	}
 	function ens_normalize(name) {
-	    return ens_normalize_post_check(normalize(name, filter_fe0f));
+	    return flatten(split(name, nf.nfc, filter_fe0f));
 	}
 	exports.ens_normalize = ens_normalize;
-	function normalize(name, emoji_filter) {
-	    var input = explode_cp(name).reverse(); // flip for pop
-	    var output = [];
+	function ens_beautify(name) {
+	    var labels = split(name, nf.nfc, function (x) { return x; }); // emoji not exposed
+	    for (var _i = 0, labels_1 = labels; _i < labels_1.length; _i++) {
+	        var _a = labels_1[_i], type = _a.type, output = _a.output, error = _a.error;
+	        if (error)
+	            break; // flatten will throw
+	        // replace leading/trailing hyphen
+	        // 20230121: consider beautifing all or leading/trailing hyphen to unicode variant
+	        // not exactly the same in every font, but very similar: "-" vs "‐"
+	        /*
+	        const UNICODE_HYPHEN = 0x2010;
+	        // maybe this should replace all for visual consistancy?
+	        // `node tools/reg-count.js regex ^-\{2,\}` => 592
+	        //for (let i = 0; i < output.length; i++) if (output[i] == 0x2D) output[i] = 0x2010;
+	        if (output[0] == HYPHEN) output[0] = UNICODE_HYPHEN;
+	        let end = output.length-1;
+	        if (output[end] == HYPHEN) output[end] = UNICODE_HYPHEN;
+	        */
+	        // 20230123: WHATWG URL uses "CheckHyphens" false
+	        // https://url.spec.whatwg.org/#idna
+	        // update ethereum symbol
+	        // ξ => Ξ if not greek
+	        if (type !== 'Greek')
+	            (0, utils.array_replace)(output, 0x3BE, 0x39E);
+	        // 20221213: fixes bidi subdomain issue, but breaks invariant (200E is disallowed)
+	        // could be fixed with special case for: 2D (.) + 200E (LTR)
+	        // https://discuss.ens.domains/t/bidi-label-ordering-spoof/15824
+	        //output.splice(0, 0, 0x200E);
+	    }
+	    return flatten(labels);
+	}
+	exports.ens_beautify = ens_beautify;
+	function split(name, nf, ef) {
+	    if (!name)
+	        return []; // 20230719: empty name allowance
+	    init();
+	    var offset = 0;
+	    // https://unicode.org/reports/tr46/#Validity_Criteria
+	    // 4.) "The label must not contain a U+002E ( . ) FULL STOP."
+	    return name.split(STOP_CH).map(function (label) {
+	        var input = (0, utils.explode_cp)(label);
+	        var info = {
+	            input: input,
+	            offset: offset,
+	        };
+	        offset += input.length + 1; // + stop
+	        try {
+	            // 1.) "The label must be in Unicode Normalization Form NFC"
+	            var tokens = info.tokens = tokens_from_str(input, nf, ef);
+	            var token_count = tokens.length;
+	            var type = void 0;
+	            if (!token_count) { // the label was effectively empty (could of had ignored characters)
+	                //norm = [];
+	                //type = 'None'; // use this instead of next match, "ASCII"
+	                // 20230120: change to strict
+	                // https://discuss.ens.domains/t/ens-name-normalization-2nd/14564/59
+	                throw new Error("empty label");
+	            }
+	            var norm_1 = info.output = [];
+	            tokens.forEach(function (_a) {
+	                var cps = _a.cps;
+	                return norm_1.push.apply(norm_1, cps);
+	            });
+	            check_leading_underscore(norm_1);
+	            var emoji = token_count > 1 || tokens[0].emoji; // same as: tokens.some(x => x.is_emoji);
+	            if (!emoji && norm_1.every(function (cp) { return cp < 0x80; })) { // special case for ascii
+	                // 20230123: matches matches WHATWG, see note 3.3
+	                check_label_extension(norm_1); // only needed for ascii
+	                // cant have fenced
+	                // cant have cm
+	                // cant have wholes
+	                // see derive: "Fastpath ASCII"
+	                type = 'ASCII';
+	            }
+	            else {
+	                var chars_1 = [];
+	                var unique_set_1 = {};
+	                tokens.forEach(function (_a) {
+	                    var emoji = _a.emoji, cps = _a.cps;
+	                    if (!emoji) {
+	                        chars_1.push.apply(chars_1, cps); // all of the nfc tokens concat together
+	                        (0, set.set_add_many)(unique_set_1, cps);
+	                    }
+	                });
+	                if (!chars_1.length) { // theres no text, just emoji
+	                    type = 'Emoji';
+	                }
+	                else {
+	                    // 5.) "The label must not begin with a combining mark, that is: General_Category=Mark."
+	                    if (norm_1[0] in CM)
+	                        throw error_placement('leading combining mark');
+	                    for (var i = 1; i < token_count; i++) { // we've already checked the first token
+	                        var _a = tokens[i], emoji_1 = _a.emoji, cps = _a.cps;
+	                        if (!emoji_1 && cps[0] in CM) { // every text token has emoji neighbors, eg. EtEEEtEt...
+	                            // bidi_qq() not needed since emoji is LTR and cps is a CM
+	                            throw error_placement("emoji + combining mark: \"" + (0, utils.str_from_cps)(tokens[i - 1].cps) + " + " + safe_str_from_cps([cps[0]]) + "\"");
+	                        }
+	                    }
+	                    check_fenced(norm_1);
+	                    var unique = Object.values(unique_set_1);
+	                    var g = determine_group(unique)[0]; // take the first match
+	                    // see derive: "Matching Groups have Same CM Style"
+	                    // alternative: could form a hybrid type: Latin/Japanese/...	
+	                    check_group(g, chars_1); // need text in order
+	                    check_whole(g, unique); // only need unique text (order would be required for multiple-char confusables)
+	                    type = g.N;
+	                    // 20230121: consider exposing restricted flag
+	                    // it's simpler to just check for 'Restricted'
+	                    // or even better: type.endsWith(']')
+	                    //if (g.R) info.restricted = true;
+	                }
+	            }
+	            info.type = type;
+	        }
+	        catch (err) {
+	            info.error = err; // use full error object
+	        }
+	        return info;
+	    });
+	}
+	function check_whole(group, unique) {
+	    var maker;
+	    var shared = [];
+	    var _loop_5 = function (cp) {
+	        var whole = WHOLE_MAP[cp];
+	        if (whole === UNIQUE_PH)
+	            return { value: void 0 }; // unique, non-confusable
+	        if (whole) {
+	            var set_2 = whole.M[cp]; // groups which have a character that look-like this character
+	            maker = maker ? maker.filter(function (g) { return set_2[g.N]; }) : Object.values(set_2);
+	            if (!maker.length)
+	                return { value: void 0 }; // confusable intersection is empty
+	        }
+	        else {
+	            shared.push(cp);
+	        }
+	    };
+	    for (var _i = 0, unique_1 = unique; _i < unique_1.length; _i++) {
+	        var cp = unique_1[_i];
+	        var state_1 = _loop_5(cp);
+	        if (typeof state_1 === "object")
+	            return state_1.value;
+	    }
+	    if (maker) {
+	        var _loop_6 = function (g) {
+	            if (shared.every(function (cp) { return group_has_cp(g, cp); })) {
+	                throw new Error("whole-script confusable: " + group.N + "/" + g.N);
+	            }
+	        };
+	        // we have 1+ confusable
+	        // check if any of the remaining groups
+	        // contain the shared characters too
+	        for (var _a = 0, maker_1 = maker; _a < maker_1.length; _a++) {
+	            var g = maker_1[_a];
+	            _loop_6(g);
+	        }
+	    }
+	}
+	// assumption: unique.size > 0
+	// returns list of matching groups
+	function determine_group(unique) {
+	    var groups = GROUPS;
+	    var _loop_7 = function (cp) {
+	        // note: we need to dodge CM that are whitelisted
+	        // but that code isn't currently necessary
+	        var gs = groups.filter(function (g) { return group_has_cp(g, cp); });
+	        if (!gs.length) {
+	            if (!GROUPS.some(function (g) { return group_has_cp(g, cp); })) {
+	                // the character was composed of valid parts
+	                // but it's NFC form is invalid
+	                // 20230716: change to more exact statement, see: ENSNormalize.{cs,java}
+	                // note: this doesn't have to be a composition
+	                // 20230720: change to full check
+	                throw error_disallowed(cp); // this should be rare
+	            }
+	            else {
+	                // there is no group that contains all these characters
+	                // throw using the highest priority group that matched
+	                // https://www.unicode.org/reports/tr39/#mixed_script_confusables
+	                throw error_group_member(groups[0], cp);
+	            }
+	        }
+	        groups = gs;
+	        if (gs.length == 1)
+	            return "break"; // there is only one group left
+	    };
+	    for (var _i = 0, unique_2 = unique; _i < unique_2.length; _i++) {
+	        var cp = unique_2[_i];
+	        var state_2 = _loop_7(cp);
+	        if (state_2 === "break")
+	            break;
+	    }
+	    // there are at least 1 group(s) with all of these characters
+	    return groups;
+	}
+	// throw on first error
+	function flatten(split) {
+	    return split.map(function (_a) {
+	        var input = _a.input, error = _a.error, output = _a.output;
+	        if (error) {
+	            // don't print label again if just a single label
+	            var msg = error.message;
+	            // bidi_qq() only necessary if msg is digits
+	            throw new Error(split.length == 1 ? msg : "Invalid label " + bidi_qq(safe_str_from_cps(input, 63)) + ": " + msg);
+	        }
+	        return (0, utils.str_from_cps)(output);
+	    }).join(STOP_CH);
+	}
+	function error_disallowed(cp) {
+	    // TODO: add cp to error?
+	    return new Error("disallowed character: " + quoted_cp(cp));
+	}
+	function error_group_member(g, cp) {
+	    var quoted = quoted_cp(cp);
+	    var gg = GROUPS.find(function (g) { return g.P[cp]; }); // only check primary
+	    if (gg) {
+	        quoted = gg.N + " " + quoted;
+	    }
+	    return new Error("illegal mixture: " + g.N + " + " + quoted);
+	}
+	function error_placement(where) {
+	    return new Error("illegal placement: " + where);
+	}
+	// assumption: cps.length > 0
+	// assumption: cps[0] isn't a CM
+	// assumption: the previous character isn't an emoji
+	function check_group(g, cps) {
+	    for (var _i = 0, cps_2 = cps; _i < cps_2.length; _i++) {
+	        var cp = cps_2[_i];
+	        if (!group_has_cp(g, cp)) {
+	            // for whitelisted scripts, this will throw illegal mixture on invalid cm, eg. "e{300}{300}"
+	            // at the moment, it's unnecessary to introduce an extra error type
+	            // until there exists a whitelisted multi-character
+	            //   eg. if (M < 0 && is_combining_mark(cp)) { ... }
+	            // there are 3 cases:
+	            //   1. illegal cm for wrong group => mixture error
+	            //   2. illegal cm for same group => cm error
+	            //       requires set of whitelist cm per group: 
+	            //        eg. new Set([...g.P, ...g.Q].flatMap(nfc).filter(cp => CM.has(cp)))
+	            //   3. wrong group => mixture error
+	            throw error_group_member(g, cp);
+	        }
+	    }
+	    //if (M >= 0) { // we have a known fixed cm count
+	    if (g.M) { // we need to check for NSM
+	        var decomposed = (0, nf.nfd)(cps);
+	        for (var i = 1, e = decomposed.length; i < e; i++) { // see: assumption
+	            // 20230210: bugfix: using cps instead of decomposed h/t Carbon225
+	            /*
+	            if (CM.has(decomposed[i])) {
+	                let j = i + 1;
+	                while (j < e && CM.has(decomposed[j])) j++;
+	                if (j - i > M) {
+	                    throw new Error(`too many combining marks: ${g.N} ${bidi_qq(str_from_cps(decomposed.slice(i-1, j)))} (${j-i}/${M})`);
+	                }
+	                i = j;
+	            }
+	            */
+	            // 20230217: switch to NSM counting
+	            // https://www.unicode.org/reports/tr39/#Optional_Detection
+	            if (decomposed[i] in NSM) {
+	                var j = i + 1;
+	                for (var cp = void 0; j < e && (cp = decomposed[j]) in NSM; j++) {
+	                    // a. Forbid sequences of the same nonspacing mark.
+	                    for (var k = i; k < j; k++) { // O(n^2) but n < 100
+	                        if (decomposed[k] == cp) {
+	                            throw new Error("duplicate non-spacing marks: " + quoted_cp(cp));
+	                        }
+	                    }
+	                }
+	                // parse to end so we have full nsm count
+	                // b. Forbid sequences of more than 4 nonspacing marks (gc=Mn or gc=Me).
+	                if (j - i > include_ens_1.NSM_MAX) {
+	                    // note: this slice starts with a base char or spacing-mark cm
+	                    throw new Error("excessive non-spacing marks: " + bidi_qq(safe_str_from_cps(decomposed.slice(i - 1, j))) + " (" + (j - i) + "/" + include_ens_1.NSM_MAX + ")");
+	                }
+	                i = j;
+	            }
+	        }
+	    }
+	    // *** this code currently isn't needed ***
+	    /*
+	    let cm_whitelist = M instanceof Map;
+	    for (let i = 0, e = cps.length; i < e; ) {
+	        let cp = cps[i++];
+	        let seqs = cm_whitelist && M.get(cp);
+	        if (seqs) {
+	            // list of codepoints that can follow
+	            // if this exists, this will always be 1+
+	            let j = i;
+	            while (j < e && CM.has(cps[j])) j++;
+	            let cms = cps.slice(i, j);
+	            let match = seqs.find(seq => !compare_arrays(seq, cms));
+	            if (!match) throw new Error(`disallowed combining mark sequence: "${safe_str_from_cps([cp, ...cms])}"`);
+	            i = j;
+	        } else if (!V.has(cp)) {
+	            // https://www.unicode.org/reports/tr39/#mixed_script_confusables
+	            let quoted = quoted_cp(cp);
+	            for (let cp of cps) {
+	                let u = UNIQUE.get(cp);
+	                if (u && u !== g) {
+	                    // if both scripts are restricted this error is confusing
+	                    // because we don't differentiate RestrictedA from RestrictedB
+	                    if (!u.R) quoted = `${quoted} is ${u.N}`;
+	                    break;
+	                }
+	            }
+	            throw new Error(`disallowed ${g.N} character: ${quoted}`);
+	            //throw new Error(`disallowed character: ${quoted} (expected ${g.N})`);
+	            //throw new Error(`${g.N} does not allow: ${quoted}`);
+	        }
+	    }
+	    if (!cm_whitelist) {
+	        let decomposed = nfd(cps);
+	        for (let i = 1, e = decomposed.length; i < e; i++) { // we know it can't be cm leading
+	            if (CM.has(decomposed[i])) {
+	                let j = i + 1;
+	                while (j < e && CM.has(decomposed[j])) j++;
+	                if (j - i > M) {
+	                    throw new Error(`too many combining marks: "${str_from_cps(decomposed.slice(i-1, j))}" (${j-i}/${M})`);
+	                }
+	                i = j;
+	            }
+	        }
+	    }
+	    */
+	}
+	// given a list of codepoints
+	// returns a list of lists, where emoji are a fully-qualified (as Array subclass)
+	// eg. explode_cp("abc💩d") => [[61, 62, 63], Emoji[1F4A9, FE0F], [64]]
+	// 20230818: rename for 'process' name collision h/t Javarome
+	// https://github.com/adraffy/ens-normalize.js/issues/23
+	function tokens_from_str(input, nf, ef) {
+	    var ret = [];
+	    var chars = [];
+	    input = input.slice().reverse(); // flip so we can pop
 	    while (input.length) {
 	        var emoji = consume_emoji_reversed(input);
 	        if (emoji) {
-	            output.push.apply(output, emoji_filter(emoji));
-	            continue;
+	            add_text();
+	            ret.push({ emoji: true, cps: ef(emoji) });
 	        }
-	        var cp = input.pop();
-	        if (VALID.has(cp)) {
-	            output.push(cp);
-	            continue;
+	        else {
+	            var cp = input.pop();
+	            if (VALID[cp]) {
+	                chars.push(cp);
+	            }
+	            else {
+	                var cps = MAPPED[cp];
+	                if (cps) {
+	                    chars.push.apply(chars, cps); // less than 10 elements
+	                }
+	                else if (!(cp in IGNORED)) {
+	                    // 20230912: unicode 15.1 changed the order of processing such that
+	                    // disallowed parts are only rejected after NFC
+	                    // https://unicode.org/reports/tr46/#Validity_Criteria
+	                    // this doesn't impact normalization as of today
+	                    // technically, this error can be removed as the group logic will apply similar logic
+	                    // however the error type might be less clear
+	                    throw error_disallowed(cp);
+	                }
+	            }
 	        }
-	        if (IGNORED.has(cp)) {
-	            continue;
-	        }
-	        var cps = MAPPED[cp];
-	        if (cps) {
-	            output.push.apply(output, cps);
-	            continue;
-	        }
-	        throw new Error("Disallowed codepoint: 0x" + cp.toString(16).toUpperCase());
 	    }
-	    return ens_normalize_post_check(nfc(String.fromCodePoint.apply(String, output)));
+	    add_text();
+	    return ret;
+	    function add_text() {
+	        if (chars.length) {
+	            ret.push({ emoji: false, cps: nf(chars) });
+	            chars = [];
+	        }
+	    }
 	}
-	function nfc(s) {
-	    return s.normalize('NFC');
+	function filter_fe0f(cps) {
+	    return cps.filter(function (cp) { return cp != FE0F; });
 	}
-	function consume_emoji_reversed(cps, eaten) {
-	    var _a;
+	// given array of codepoints
+	// returns the longest valid emoji sequence (or undefined if no match)
+	// *MUTATES* the supplied array
+	// disallows interleaved ignored characters
+	// fills (optional) eaten array with matched codepoints
+	function consume_emoji_reversed(cps) {
 	    var node = EMOJI_ROOT;
 	    var emoji;
-	    var saved;
-	    var stack = [];
 	    var pos = cps.length;
-	    if (eaten)
-	        eaten.length = 0; // clear input buffer (if needed)
-	    var _loop_1 = function () {
-	        var cp = cps[--pos];
-	        node = (_a = node.branches.find(function (x) { return x.set.has(cp); })) === null || _a === void 0 ? void 0 : _a.node;
+	    while (pos) {
+	        node = node[cps[--pos]];
 	        if (!node)
-	            return "break";
-	        if (node.save) { // remember
-	            saved = cp;
-	        }
-	        else if (node.check) { // check exclusion
-	            if (cp === saved)
-	                return "break";
-	        }
-	        stack.push(cp);
-	        if (node.fe0f) {
-	            stack.push(0xFE0F);
-	            if (pos > 0 && cps[pos - 1] == 0xFE0F)
-	                pos--; // consume optional FE0F
-	        }
-	        if (node.valid) { // this is a valid emoji (so far)
-	            emoji = stack.slice(); // copy stack
-	            if (node.valid == 2)
-	                emoji.splice(1, 1); // delete FE0F at position 1 (RGI ZWJ don't follow spec!)
-	            if (eaten)
-	                eaten.push.apply(eaten, cps.slice(pos).reverse()); // copy input (if needed)
+	            break;
+	        var V = node.V;
+	        if (V) { // this is a valid emoji (so far)
+	            emoji = V;
 	            cps.length = pos; // truncate
 	        }
-	    };
-	    while (pos) {
-	        var state_1 = _loop_1();
-	        if (state_1 === "break")
-	            break;
 	    }
 	    return emoji;
 	}
@@ -9394,43 +10310,24 @@
 
 	var Zeros = new Uint8Array(32);
 	Zeros.fill(0);
-	function checkComponent(comp) {
-	    if (comp.length === 0) {
-	        throw new Error("invalid ENS name; empty component");
-	    }
-	    return comp;
-	}
 	function ensNameSplit(name) {
-	    var bytes = (0, lib$8.toUtf8Bytes)((0, lib$a.ens_normalize)(name));
-	    var comps = [];
-	    if (name.length === 0) {
-	        return comps;
-	    }
-	    var last = 0;
-	    for (var i = 0; i < bytes.length; i++) {
-	        var d = bytes[i];
-	        // A separator (i.e. "."); copy this component
-	        if (d === 0x2e) {
-	            comps.push(checkComponent(bytes.slice(last, i)));
-	            last = i + 1;
-	        }
-	    }
-	    // There was a stray separator at the end of the name
-	    if (last >= bytes.length) {
-	        throw new Error("invalid ENS name; empty component");
-	    }
-	    comps.push(checkComponent(bytes.slice(last)));
-	    return comps;
+	    // the empty string is 0-labels
+	    // every label must be non-empty
+	    if (!name)
+	        return []; // note: "".split('.') === [""]
+	    return (0, lib$a.ens_normalize)(name).split('.').map(function (x) { return (0, lib$8.toUtf8Bytes)(x); });
 	}
 	function ensNormalize(name) {
-	    return ensNameSplit(name).map(function (comp) { return (0, lib$8.toUtf8String)(comp); }).join(".");
+	    return (0, lib$a.ens_normalize)(name);
 	}
 	exports.ensNormalize = ensNormalize;
 	function isValidName(name) {
+	    // there must be 1+ labels
+	    // every labels must be non-empty
 	    try {
-	        return (ensNameSplit(name).length !== 0);
+	        return !!(0, lib$a.ens_normalize)(name);
 	    }
-	    catch (error) { }
+	    catch (_a) { }
 	    return false;
 	}
 	exports.isValidName = isValidName;
@@ -9447,15 +10344,16 @@
 	    return (0, lib$1.hexlify)(result);
 	}
 	exports.namehash = namehash;
-	function dnsEncode(name) {
+	function dnsEncode(name, max) {
+	    if ((max & 255) !== max)
+	        max = 63; // max must be exactly 1 byte else 63 (old default)
 	    return (0, lib$1.hexlify)((0, lib$1.concat)(ensNameSplit(name).map(function (comp) {
-	        // DNS does not allow components over 63 bytes in length
-	        if (comp.length > 63) {
-	            throw new Error("invalid DNS encoded entry; length exceeds 63 bytes");
+	        if (comp.length > max) {
+	            throw new Error("invalid DNS encoded entry; length exceeds " + max + " bytes");
 	        }
 	        var bytes = new Uint8Array(comp.length + 1);
+	        bytes[0] = comp.length;
 	        bytes.set(comp, 1);
-	        bytes[0] = bytes.length - 1;
 	        return bytes;
 	    }))) + "00";
 	}
@@ -16649,7 +17547,7 @@
 	}
 	var shr64_lo_1 = shr64_lo;
 
-	var utils = {
+	var utils$2 = {
 		inherits: inherits_1,
 		toArray: toArray_1,
 		toHex: toHex_1,
@@ -16699,7 +17597,7 @@
 
 	BlockHash.prototype.update = function update(msg, enc) {
 	  // Convert message to array, pad it, and join into 32bit blocks
-	  msg = utils.toArray(msg, enc);
+	  msg = utils$2.toArray(msg, enc);
 	  if (!this.pending)
 	    this.pending = msg;
 	  else
@@ -16716,7 +17614,7 @@
 	    if (this.pending.length === 0)
 	      this.pending = null;
 
-	    msg = utils.join32(msg, 0, msg.length - r, this.endian);
+	    msg = utils$2.join32(msg, 0, msg.length - r, this.endian);
 	    for (var i = 0; i < msg.length; i += this._delta32)
 	      this._update(msg, i, i + this._delta32);
 	  }
@@ -16778,7 +17676,7 @@
 	'use strict';
 
 
-	var rotr32$1 = utils.rotr32;
+	var rotr32$1 = utils$2.rotr32;
 
 	function ft_1(s, x, y, z) {
 	  if (s === 0)
@@ -16842,9 +17740,9 @@
 
 
 
-	var rotl32$1 = utils.rotl32;
-	var sum32$1 = utils.sum32;
-	var sum32_5$1 = utils.sum32_5;
+	var rotl32$1 = utils$2.rotl32;
+	var sum32$1 = utils$2.sum32;
+	var sum32_5$1 = utils$2.sum32_5;
 	var ft_1$1 = common$1.ft_1;
 	var BlockHash$1 = common.BlockHash;
 
@@ -16864,7 +17762,7 @@
 	  this.W = new Array(80);
 	}
 
-	utils.inherits(SHA1, BlockHash$1);
+	utils$2.inherits(SHA1, BlockHash$1);
 	var _1 = SHA1;
 
 	SHA1.blockSize = 512;
@@ -16906,9 +17804,9 @@
 
 	SHA1.prototype._digest = function digest(enc) {
 	  if (enc === 'hex')
-	    return utils.toHex32(this.h, 'big');
+	    return utils$2.toHex32(this.h, 'big');
 	  else
-	    return utils.split32(this.h, 'big');
+	    return utils$2.split32(this.h, 'big');
 	};
 
 	'use strict';
@@ -16918,9 +17816,9 @@
 
 
 
-	var sum32$2 = utils.sum32;
-	var sum32_4$1 = utils.sum32_4;
-	var sum32_5$2 = utils.sum32_5;
+	var sum32$2 = utils$2.sum32;
+	var sum32_4$1 = utils$2.sum32_4;
+	var sum32_5$2 = utils$2.sum32_5;
 	var ch32$1 = common$1.ch32;
 	var maj32$1 = common$1.maj32;
 	var s0_256$1 = common$1.s0_256;
@@ -16961,7 +17859,7 @@
 	  this.k = sha256_K;
 	  this.W = new Array(64);
 	}
-	utils.inherits(SHA256, BlockHash$2);
+	utils$2.inherits(SHA256, BlockHash$2);
 	var _256 = SHA256;
 
 	SHA256.blockSize = 512;
@@ -17012,9 +17910,9 @@
 
 	SHA256.prototype._digest = function digest(enc) {
 	  if (enc === 'hex')
-	    return utils.toHex32(this.h, 'big');
+	    return utils$2.toHex32(this.h, 'big');
 	  else
-	    return utils.split32(this.h, 'big');
+	    return utils$2.split32(this.h, 'big');
 	};
 
 	'use strict';
@@ -17031,7 +17929,7 @@
 	    0xc1059ed8, 0x367cd507, 0x3070dd17, 0xf70e5939,
 	    0xffc00b31, 0x68581511, 0x64f98fa7, 0xbefa4fa4 ];
 	}
-	utils.inherits(SHA224, _256);
+	utils$2.inherits(SHA224, _256);
 	var _224 = SHA224;
 
 	SHA224.blockSize = 512;
@@ -17042,9 +17940,9 @@
 	SHA224.prototype._digest = function digest(enc) {
 	  // Just truncate output
 	  if (enc === 'hex')
-	    return utils.toHex32(this.h.slice(0, 7), 'big');
+	    return utils$2.toHex32(this.h.slice(0, 7), 'big');
 	  else
-	    return utils.split32(this.h.slice(0, 7), 'big');
+	    return utils$2.split32(this.h.slice(0, 7), 'big');
 	};
 
 	'use strict';
@@ -17053,17 +17951,17 @@
 
 
 
-	var rotr64_hi$1 = utils.rotr64_hi;
-	var rotr64_lo$1 = utils.rotr64_lo;
-	var shr64_hi$1 = utils.shr64_hi;
-	var shr64_lo$1 = utils.shr64_lo;
-	var sum64$1 = utils.sum64;
-	var sum64_hi$1 = utils.sum64_hi;
-	var sum64_lo$1 = utils.sum64_lo;
-	var sum64_4_hi$1 = utils.sum64_4_hi;
-	var sum64_4_lo$1 = utils.sum64_4_lo;
-	var sum64_5_hi$1 = utils.sum64_5_hi;
-	var sum64_5_lo$1 = utils.sum64_5_lo;
+	var rotr64_hi$1 = utils$2.rotr64_hi;
+	var rotr64_lo$1 = utils$2.rotr64_lo;
+	var shr64_hi$1 = utils$2.shr64_hi;
+	var shr64_lo$1 = utils$2.shr64_lo;
+	var sum64$1 = utils$2.sum64;
+	var sum64_hi$1 = utils$2.sum64_hi;
+	var sum64_lo$1 = utils$2.sum64_lo;
+	var sum64_4_hi$1 = utils$2.sum64_4_hi;
+	var sum64_4_lo$1 = utils$2.sum64_4_lo;
+	var sum64_5_hi$1 = utils$2.sum64_5_hi;
+	var sum64_5_lo$1 = utils$2.sum64_5_lo;
 
 	var BlockHash$3 = common.BlockHash;
 
@@ -17127,7 +18025,7 @@
 	  this.k = sha512_K;
 	  this.W = new Array(160);
 	}
-	utils.inherits(SHA512, BlockHash$3);
+	utils$2.inherits(SHA512, BlockHash$3);
 	var _512 = SHA512;
 
 	SHA512.blockSize = 1024;
@@ -17257,9 +18155,9 @@
 
 	SHA512.prototype._digest = function digest(enc) {
 	  if (enc === 'hex')
-	    return utils.toHex32(this.h, 'big');
+	    return utils$2.toHex32(this.h, 'big');
 	  else
-	    return utils.split32(this.h, 'big');
+	    return utils$2.split32(this.h, 'big');
 	};
 
 	function ch64_hi(xh, xl, yh, yl, zh) {
@@ -17399,7 +18297,7 @@
 	    0xdb0c2e0d, 0x64f98fa7,
 	    0x47b5481d, 0xbefa4fa4 ];
 	}
-	utils.inherits(SHA384, _512);
+	utils$2.inherits(SHA384, _512);
 	var _384 = SHA384;
 
 	SHA384.blockSize = 1024;
@@ -17409,9 +18307,9 @@
 
 	SHA384.prototype._digest = function digest(enc) {
 	  if (enc === 'hex')
-	    return utils.toHex32(this.h.slice(0, 12), 'big');
+	    return utils$2.toHex32(this.h.slice(0, 12), 'big');
 	  else
-	    return utils.split32(this.h.slice(0, 12), 'big');
+	    return utils$2.split32(this.h.slice(0, 12), 'big');
 	};
 
 	'use strict';
@@ -17435,10 +18333,10 @@
 
 
 
-	var rotl32$2 = utils.rotl32;
-	var sum32$3 = utils.sum32;
-	var sum32_3$1 = utils.sum32_3;
-	var sum32_4$2 = utils.sum32_4;
+	var rotl32$2 = utils$2.rotl32;
+	var sum32$3 = utils$2.sum32;
+	var sum32_3$1 = utils$2.sum32_3;
+	var sum32_4$2 = utils$2.sum32_4;
 	var BlockHash$4 = common.BlockHash;
 
 	function RIPEMD160() {
@@ -17450,7 +18348,7 @@
 	  this.h = [ 0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476, 0xc3d2e1f0 ];
 	  this.endian = 'little';
 	}
-	utils.inherits(RIPEMD160, BlockHash$4);
+	utils$2.inherits(RIPEMD160, BlockHash$4);
 	var ripemd160 = RIPEMD160;
 
 	RIPEMD160.blockSize = 512;
@@ -17501,9 +18399,9 @@
 
 	RIPEMD160.prototype._digest = function digest(enc) {
 	  if (enc === 'hex')
-	    return utils.toHex32(this.h, 'little');
+	    return utils$2.toHex32(this.h, 'little');
 	  else
-	    return utils.split32(this.h, 'little');
+	    return utils$2.split32(this.h, 'little');
 	};
 
 	function f(j, x, y, z) {
@@ -17595,7 +18493,7 @@
 	  this.inner = null;
 	  this.outer = null;
 
-	  this._init(utils.toArray(key, enc));
+	  this._init(utils$2.toArray(key, enc));
 	}
 	var hmac = Hmac;
 
@@ -17632,7 +18530,7 @@
 	var hash_1 = createCommonjsModule(function (module, exports) {
 	var hash = exports;
 
-	hash.utils = utils;
+	hash.utils = utils$2;
 	hash.common = common;
 	hash.sha = sha;
 	hash.ripemd = ripemd;
@@ -21978,7 +22876,7 @@
 
 	var _version$B = /*@__PURE__*/getDefaultExportFromCjs(_version$A);
 
-	var utils$1 = createCommonjsModule(function (module, exports) {
+	var utils$3 = createCommonjsModule(function (module, exports) {
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.uuidV4 = exports.searchPath = exports.getPassword = exports.zpad = exports.looseArrayify = void 0;
@@ -22051,7 +22949,7 @@
 
 	});
 
-	var utils$2 = /*@__PURE__*/getDefaultExportFromCjs(utils$1);
+	var utils$4 = /*@__PURE__*/getDefaultExportFromCjs(utils$3);
 
 	var crowdsale = createCommonjsModule(function (module, exports) {
 	"use strict";
@@ -22100,11 +22998,11 @@
 	// See: https://github.com/ethereum/pyethsaletool
 	function decrypt(json, password) {
 	    var data = JSON.parse(json);
-	    password = (0, utils$1.getPassword)(password);
+	    password = (0, utils$3.getPassword)(password);
 	    // Ethereum Address
-	    var ethaddr = (0, lib$6.getAddress)((0, utils$1.searchPath)(data, "ethaddr"));
+	    var ethaddr = (0, lib$6.getAddress)((0, utils$3.searchPath)(data, "ethaddr"));
 	    // Encrypted Seed
-	    var encseed = (0, utils$1.looseArrayify)((0, utils$1.searchPath)(data, "encseed"));
+	    var encseed = (0, utils$3.looseArrayify)((0, utils$3.searchPath)(data, "encseed"));
 	    if (!encseed || (encseed.length % 16) !== 0) {
 	        logger.throwArgumentError("invalid encseed", "json", json);
 	    }
@@ -22771,9 +23669,9 @@
 	}(lib$3.Description));
 	exports.KeystoreAccount = KeystoreAccount;
 	function _decrypt(data, key, ciphertext) {
-	    var cipher = (0, utils$1.searchPath)(data, "crypto/cipher");
+	    var cipher = (0, utils$3.searchPath)(data, "crypto/cipher");
 	    if (cipher === "aes-128-ctr") {
-	        var iv = (0, utils$1.looseArrayify)((0, utils$1.searchPath)(data, "crypto/cipherparams/iv"));
+	        var iv = (0, utils$3.looseArrayify)((0, utils$3.searchPath)(data, "crypto/cipherparams/iv"));
 	        var counter = new aes_js_1.default.Counter(iv);
 	        var aesCtr = new aes_js_1.default.ModeOfOperation.ctr(key, counter);
 	        return (0, lib$1.arrayify)(aesCtr.decrypt(ciphertext));
@@ -22781,9 +23679,9 @@
 	    return null;
 	}
 	function _getAccount(data, key) {
-	    var ciphertext = (0, utils$1.looseArrayify)((0, utils$1.searchPath)(data, "crypto/ciphertext"));
+	    var ciphertext = (0, utils$3.looseArrayify)((0, utils$3.searchPath)(data, "crypto/ciphertext"));
 	    var computedMAC = (0, lib$1.hexlify)((0, lib$4.keccak256)((0, lib$1.concat)([key.slice(16, 32), ciphertext]))).substring(2);
-	    if (computedMAC !== (0, utils$1.searchPath)(data, "crypto/mac").toLowerCase()) {
+	    if (computedMAC !== (0, utils$3.searchPath)(data, "crypto/mac").toLowerCase()) {
 	        throw new Error("invalid password");
 	    }
 	    var privateKey = _decrypt(data, key.slice(0, 16), ciphertext);
@@ -22809,13 +23707,13 @@
 	        privateKey: (0, lib$1.hexlify)(privateKey)
 	    };
 	    // Version 0.1 x-ethers metadata must contain an encrypted mnemonic phrase
-	    if ((0, utils$1.searchPath)(data, "x-ethers/version") === "0.1") {
-	        var mnemonicCiphertext = (0, utils$1.looseArrayify)((0, utils$1.searchPath)(data, "x-ethers/mnemonicCiphertext"));
-	        var mnemonicIv = (0, utils$1.looseArrayify)((0, utils$1.searchPath)(data, "x-ethers/mnemonicCounter"));
+	    if ((0, utils$3.searchPath)(data, "x-ethers/version") === "0.1") {
+	        var mnemonicCiphertext = (0, utils$3.looseArrayify)((0, utils$3.searchPath)(data, "x-ethers/mnemonicCiphertext"));
+	        var mnemonicIv = (0, utils$3.looseArrayify)((0, utils$3.searchPath)(data, "x-ethers/mnemonicCounter"));
 	        var mnemonicCounter = new aes_js_1.default.Counter(mnemonicIv);
 	        var mnemonicAesCtr = new aes_js_1.default.ModeOfOperation.ctr(mnemonicKey, mnemonicCounter);
-	        var path = (0, utils$1.searchPath)(data, "x-ethers/path") || lib$n.defaultPath;
-	        var locale = (0, utils$1.searchPath)(data, "x-ethers/locale") || "en";
+	        var path = (0, utils$3.searchPath)(data, "x-ethers/path") || lib$n.defaultPath;
+	        var locale = (0, utils$3.searchPath)(data, "x-ethers/locale") || "en";
 	        var entropy = (0, lib$1.arrayify)(mnemonicAesCtr.decrypt(mnemonicCiphertext));
 	        try {
 	            var mnemonic = (0, lib$n.entropyToMnemonic)(entropy, locale);
@@ -22843,17 +23741,17 @@
 	    return Promise.resolve(pbkdf2Sync(passwordBytes, salt, count, dkLen, prfFunc));
 	}
 	function _computeKdfKey(data, password, pbkdf2Func, scryptFunc, progressCallback) {
-	    var passwordBytes = (0, utils$1.getPassword)(password);
-	    var kdf = (0, utils$1.searchPath)(data, "crypto/kdf");
+	    var passwordBytes = (0, utils$3.getPassword)(password);
+	    var kdf = (0, utils$3.searchPath)(data, "crypto/kdf");
 	    if (kdf && typeof (kdf) === "string") {
 	        var throwError = function (name, value) {
 	            return logger.throwArgumentError("invalid key-derivation function parameters", name, value);
 	        };
 	        if (kdf.toLowerCase() === "scrypt") {
-	            var salt = (0, utils$1.looseArrayify)((0, utils$1.searchPath)(data, "crypto/kdfparams/salt"));
-	            var N = parseInt((0, utils$1.searchPath)(data, "crypto/kdfparams/n"));
-	            var r = parseInt((0, utils$1.searchPath)(data, "crypto/kdfparams/r"));
-	            var p = parseInt((0, utils$1.searchPath)(data, "crypto/kdfparams/p"));
+	            var salt = (0, utils$3.looseArrayify)((0, utils$3.searchPath)(data, "crypto/kdfparams/salt"));
+	            var N = parseInt((0, utils$3.searchPath)(data, "crypto/kdfparams/n"));
+	            var r = parseInt((0, utils$3.searchPath)(data, "crypto/kdfparams/r"));
+	            var p = parseInt((0, utils$3.searchPath)(data, "crypto/kdfparams/p"));
 	            // Check for all required parameters
 	            if (!N || !r || !p) {
 	                throwError("kdf", kdf);
@@ -22862,16 +23760,16 @@
 	            if ((N & (N - 1)) !== 0) {
 	                throwError("N", N);
 	            }
-	            var dkLen = parseInt((0, utils$1.searchPath)(data, "crypto/kdfparams/dklen"));
+	            var dkLen = parseInt((0, utils$3.searchPath)(data, "crypto/kdfparams/dklen"));
 	            if (dkLen !== 32) {
 	                throwError("dklen", dkLen);
 	            }
 	            return scryptFunc(passwordBytes, salt, N, r, p, 64, progressCallback);
 	        }
 	        else if (kdf.toLowerCase() === "pbkdf2") {
-	            var salt = (0, utils$1.looseArrayify)((0, utils$1.searchPath)(data, "crypto/kdfparams/salt"));
+	            var salt = (0, utils$3.looseArrayify)((0, utils$3.searchPath)(data, "crypto/kdfparams/salt"));
 	            var prfFunc = null;
-	            var prf = (0, utils$1.searchPath)(data, "crypto/kdfparams/prf");
+	            var prf = (0, utils$3.searchPath)(data, "crypto/kdfparams/prf");
 	            if (prf === "hmac-sha256") {
 	                prfFunc = "sha256";
 	            }
@@ -22881,8 +23779,8 @@
 	            else {
 	                throwError("prf", prf);
 	            }
-	            var count = parseInt((0, utils$1.searchPath)(data, "crypto/kdfparams/c"));
-	            var dkLen = parseInt((0, utils$1.searchPath)(data, "crypto/kdfparams/dklen"));
+	            var count = parseInt((0, utils$3.searchPath)(data, "crypto/kdfparams/c"));
+	            var dkLen = parseInt((0, utils$3.searchPath)(data, "crypto/kdfparams/dklen"));
 	            if (dkLen !== 32) {
 	                throwError("dklen", dkLen);
 	            }
@@ -22940,7 +23838,7 @@
 	        options = {};
 	    }
 	    var privateKey = (0, lib$1.arrayify)(account.privateKey);
-	    var passwordBytes = (0, utils$1.getPassword)(password);
+	    var passwordBytes = (0, utils$3.getPassword)(password);
 	    var entropy = null;
 	    var path = null;
 	    var locale = null;
@@ -23017,7 +23915,7 @@
 	        // See: https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition
 	        var data = {
 	            address: account.address.substring(2).toLowerCase(),
-	            id: (0, utils$1.uuidV4)(uuidRandom),
+	            id: (0, utils$3.uuidV4)(uuidRandom),
 	            version: 3,
 	            crypto: {
 	                cipher: "aes-128-ctr",
@@ -23044,11 +23942,11 @@
 	            var mnemonicCiphertext = (0, lib$1.arrayify)(mnemonicAesCtr.encrypt(entropy));
 	            var now = new Date();
 	            var timestamp = (now.getUTCFullYear() + "-" +
-	                (0, utils$1.zpad)(now.getUTCMonth() + 1, 2) + "-" +
-	                (0, utils$1.zpad)(now.getUTCDate(), 2) + "T" +
-	                (0, utils$1.zpad)(now.getUTCHours(), 2) + "-" +
-	                (0, utils$1.zpad)(now.getUTCMinutes(), 2) + "-" +
-	                (0, utils$1.zpad)(now.getUTCSeconds(), 2) + ".0Z");
+	                (0, utils$3.zpad)(now.getUTCMonth() + 1, 2) + "-" +
+	                (0, utils$3.zpad)(now.getUTCDate(), 2) + "T" +
+	                (0, utils$3.zpad)(now.getUTCHours(), 2) + "-" +
+	                (0, utils$3.zpad)(now.getUTCMinutes(), 2) + "-" +
+	                (0, utils$3.zpad)(now.getUTCSeconds(), 2) + ".0Z");
 	            data["x-ethers"] = {
 	                client: client,
 	                gethFilename: ("UTC--" + timestamp + "--" + data.address),
@@ -31375,7 +32273,7 @@
 
 	var index$t = /*@__PURE__*/getDefaultExportFromCjs(lib$v);
 
-	var utils$3 = createCommonjsModule(function (module, exports) {
+	var utils$5 = createCommonjsModule(function (module, exports) {
 	"use strict";
 	var __createBinding = (commonjsGlobal && commonjsGlobal.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
@@ -31526,7 +32424,7 @@
 
 	});
 
-	var utils$4 = /*@__PURE__*/getDefaultExportFromCjs(utils$3);
+	var utils$6 = /*@__PURE__*/getDefaultExportFromCjs(utils$5);
 
 	var _version$O = createCommonjsModule(function (module, exports) {
 	"use strict";
@@ -31582,7 +32480,7 @@
 
 	Object.defineProperty(exports, "Wordlist", { enumerable: true, get: function () { return lib$m.Wordlist; } });
 	Object.defineProperty(exports, "wordlists", { enumerable: true, get: function () { return lib$m.wordlists; } });
-	var utils = __importStar(utils$3);
+	var utils = __importStar(utils$5);
 	exports.utils = utils;
 
 	Object.defineProperty(exports, "errors", { enumerable: true, get: function () { return lib.ErrorCode; } });
